@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Página no encontrada · {{ site.nombre }}{% endblock %}
+{% block main %}
+<section class="page-head wrap">
+  <h1>Te has salido del sendero</h1>
+  <p class="lead">Esta página no existe (o ha cambiado de sitio).</p>
+  <p><a class="btn" href="{{ site.url }}/index.html">Volver al inicio</a></p>
+</section>
+{% endblock %}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ site.nombre }}{% endblock %}</title>
+  <meta name="description" content="{% block desc %}{{ site.descripcion }}{% endblock %}">
+  <meta name="theme-color" content="#2f5d3a">
+  <meta property="og:title" content="{{ self.title() }}">
+  <meta property="og:description" content="{{ self.desc() }}">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="{{ base }}assets/favicon.svg" type="image/svg+xml">
+  {% if not site.indexar %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <link rel="stylesheet" href="{{ base }}assets/fonts.css">
+  <link rel="stylesheet" href="{{ base }}assets/vendor/leaflet.css">
+  <link rel="stylesheet" href="{{ base }}assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="{{ base }}index.html" aria-label="{{ site.nombre }} — inicio">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 26 12 9l6 9 4-6 8 14z" fill="currentColor"/><circle cx="24" cy="8" r="3" fill="var(--gold)"/></svg>
+        <span><b>La Rioja</b> <i>Lugares con encanto</i></span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav" class="nav">
+        <a href="{{ base }}index.html" {% if activo=='inicio' %}aria-current="page"{% endif %}>Inicio</a>
+        <a href="{{ base }}rutas.html" {% if activo=='rutas' %}aria-current="page"{% endif %}>Rutas</a>
+        <a href="{{ base }}presentacion.html" {% if activo=='presentacion' %}aria-current="page"{% endif %}>Presentación</a>
+        <a class="btn btn-small" href="{{ base }}contacto.html" {% if activo=='contacto' %}aria-current="page"{% endif %}>Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+  {% block main %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div>
+        <p class="foot-title">{{ site.nombre }}</p>
+        <p>{{ site.lema }}.</p>
+      </div>
+      <div>
+        <p class="foot-title">Explorar</p>
+        <p><a href="{{ base }}rutas.html">Todas las rutas</a><br><a href="{{ base }}presentacion.html">Presentación</a><br><a href="{{ base }}aviso-legal.html">Aviso legal y privacidad</a></p>
+      </div>
+      <div>
+        <p class="foot-title">Escríbeme</p>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+    </div>
+    <div class="wrap legal">
+      <p>Las rutas se realizan bajo la responsabilidad de cada persona. Consulta la previsión meteorológica, lleva mapa y agua, y respeta el entorno.
+      Mapas base: Servicio Geográfico del Ejército. Cartografía de contexto: Esri, HERE, Garmin y colaboradores de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lb-close" aria-label="Cerrar">×</button>
+    <figure><img alt=""><figcaption></figcaption></figure>
+  </div>
+
+  <script src="{{ base }}assets/vendor/leaflet.js"></script>
+  {% block scripts %}{% endblock %}
+  <script src="{{ base }}assets/main.js"></script>
+</body>
+</html>

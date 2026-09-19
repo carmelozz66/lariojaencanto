@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Todas las rutas · La Rioja, Lugares con encanto</title>
+  <meta name="description" content="Catálogo de 17 paseos por La Rioja. Filtra por comarca, dificultad y distancia.">
+  <meta name="theme-color" content="#2f5d3a">
+  <meta property="og:title" content="Todas las rutas · La Rioja, Lugares con encanto">
+  <meta property="og:description" content="Catálogo de 17 paseos por La Rioja. Filtra por comarca, dificultad y distancia.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="assets/fonts.css">
+  <link rel="stylesheet" href="assets/vendor/leaflet.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="wrap bar">
+      <a class="brand" href="index.html" aria-label="La Rioja, Lugares con encanto — inicio">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M2 26 12 9l6 9 4-6 8 14z" fill="currentColor"/><circle cx="24" cy="8" r="3" fill="var(--gold)"/></svg>
+        <span><b>La Rioja</b> <i>Lugares con encanto</i></span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav" class="nav">
+        <a href="index.html" >Inicio</a>
+        <a href="rutas.html" aria-current="page">Rutas</a>
+        <a href="presentacion.html" >Presentación</a>
+        <a class="btn btn-small" href="contacto.html" >Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+  
+<section class="page-head wrap">
+  <p class="eyebrow">Catálogo</p>
+  <h1>Todas las rutas</h1>
+  <p class="lead">Elige comarca, dificultad y distancia, o busca por nombre.</p>
+</section>
+
+<section class="wrap filters" aria-label="Filtros">
+  <label class="search"><span class="sr">Buscar</span>
+    <input type="search" id="f-q" placeholder="Buscar ruta o localidad…" autocomplete="off">
+  </label>
+  <div class="fgroup" role="group" aria-label="Comarca" id="f-zona">
+    <button class="pill on" data-v="">Todas</button>
+    <button class="pill" data-v="Oja">Oja</button><button class="pill" data-v="Najerilla">Najerilla</button><button class="pill" data-v="Iregua">Iregua</button><button class="pill" data-v="Leza">Leza</button><button class="pill" data-v="Jubera">Jubera</button><button class="pill" data-v="Cidacos">Cidacos</button>
+  </div>
+  <div class="fgroup" role="group" aria-label="Dificultad" id="f-dif">
+    <button class="pill on" data-v="">Cualquier dificultad</button>
+    <button class="pill" data-v="1-2">Fácil</button>
+    <button class="pill" data-v="3">Media</button>
+    <button class="pill" data-v="4-5">Exigente</button>
+  </div>
+  <div class="fgroup" role="group" aria-label="Distancia" id="f-km">
+    <button class="pill on" data-v="">Cualquier distancia</button>
+    <button class="pill" data-v="0-4">Hasta 4 km</button>
+    <button class="pill" data-v="4-10">4–10 km</button>
+    <button class="pill" data-v="10-99">Más de 10 km</button>
+  </div>
+</section>
+
+<section class="wrap results">
+  <p class="count" id="count" aria-live="polite"></p>
+  <div class="grid" id="grid">
+    
+<a class="card ruta-card" href="rutas/acebal.html"
+   data-zona="Oja" data-nivel="3" data-km="6.0"
+   data-texto="acebal de valgañón valgañón oja">
+  <div class="card-img">
+    <img src="img/acebal/foto-1-m.jpg" alt="Iglesia y fuente de Nª Señora de Tres Fuentes" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Oja</span>
+  </div>
+  <div class="card-body">
+    <h3>Acebal de Valgañón</h3>
+    <p class="card-loc">Valgañón</p>
+    <ul class="meta">
+      <li title="Distancia">6 km</li>
+      <li title="Desnivel">↑ 280 m</li>
+      <li class="dif dif-3" title="Dificultad: media">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>media
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/rajao.html"
+   data-zona="Najerilla" data-nivel="2" data-km="8.0"
+   data-texto="el rajao tobía najerilla">
+  <div class="card-img">
+    <img src="img/rajao/foto-1-m.jpg" alt="Arroyo Tobía" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Najerilla</span>
+  </div>
+  <div class="card-body">
+    <h3>El Rajao</h3>
+    <p class="card-loc">Tobía</p>
+    <ul class="meta">
+      <li title="Distancia">8 km</li>
+      <li title="Desnivel">↑ 280 m</li>
+      <li class="dif dif-2" title="Dificultad: media-baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>media-baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/hiedra.html"
+   data-zona="Najerilla" data-nivel="3" data-km="14.0"
+   data-texto="puente la hiedra anguiano - viniegra de abajo najerilla">
+  <div class="card-img">
+    <img src="img/hiedra/foto-1-m.jpg" alt="Puente la Hiedra" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Najerilla</span>
+  </div>
+  <div class="card-body">
+    <h3>Puente la Hiedra</h3>
+    <p class="card-loc">Anguiano - Viniegra de Abajo</p>
+    <ul class="meta">
+      <li title="Distancia">14 km</li>
+      <li title="Desnivel">↑ 300 m</li>
+      <li class="dif dif-3" title="Dificultad: media">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>media
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/ormazal.html"
+   data-zona="Najerilla" data-nivel="3" data-km="13.0"
+   data-texto="arroyo de ormazal viniegra de arriba najerilla">
+  <div class="card-img">
+    <img src="img/ormazal/foto-1-m.jpg" alt="Sendero Arroyo de Ormazal" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Najerilla</span>
+  </div>
+  <div class="card-body">
+    <h3>Arroyo de Ormazal</h3>
+    <p class="card-loc">Viniegra de Arriba</p>
+    <ul class="meta">
+      <li title="Distancia">13 km</li>
+      <li title="Desnivel">↑ 350 m</li>
+      <li class="dif dif-3" title="Dificultad: media">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>media
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/dromedario.html"
+   data-zona="Najerilla" data-nivel="1" data-km="11.0"
+   data-texto="dromedario del cabezo brieva - ortigosa najerilla">
+  <div class="card-img">
+    <img src="img/dromedario/foto-1-m.jpg" alt="Dromedario del Cabezo" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Najerilla</span>
+  </div>
+  <div class="card-body">
+    <h3>Dromedario del Cabezo</h3>
+    <p class="card-loc">Brieva - Ortigosa</p>
+    <ul class="meta">
+      <li title="Distancia">11 km</li>
+      <li title="Desnivel">↑ 230 m</li>
+      <li class="dif dif-1" title="Dificultad: baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/paraiso.html"
+   data-zona="Najerilla" data-nivel="1" data-km="10.0"
+   data-texto="paraíso urbión viniegra de arriba - viniegra de abajo najerilla">
+  <div class="card-img">
+    <img src="img/paraiso/foto-1-m.jpg" alt="Sergio en Paraiso Urbión" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Najerilla</span>
+  </div>
+  <div class="card-body">
+    <h3>Paraíso Urbión</h3>
+    <p class="card-loc">Viniegra de Arriba - Viniegra de Abajo</p>
+    <ul class="meta">
+      <li title="Distancia">10 km</li>
+      <li title="Desnivel">↑ 160 m</li>
+      <li class="dif dif-1" title="Dificultad: baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/laturce.html"
+   data-zona="Iregua" data-nivel="2" data-km="3.0"
+   data-texto="monte laturce clavijo iregua">
+  <div class="card-img">
+    <img src="img/laturce/foto-1-m.jpg" alt="Cima del Monte Laturce" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Iregua</span>
+  </div>
+  <div class="card-body">
+    <h3>Monte Laturce</h3>
+    <p class="card-loc">Clavijo</p>
+    <ul class="meta">
+      <li title="Distancia">3 km</li>
+      <li title="Desnivel">↑ 150 m</li>
+      <li class="dif dif-2" title="Dificultad: media-baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>media-baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/bajenza.html"
+   data-zona="Iregua" data-nivel="4" data-km="4.0"
+   data-texto="peña bajenza islallana iregua">
+  <div class="card-img">
+    <img src="img/bajenza/foto-1-m.jpg" alt="Vista del Castillo de Viguera" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Iregua</span>
+  </div>
+  <div class="card-body">
+    <h3>Peña Bajenza</h3>
+    <p class="card-loc">Islallana</p>
+    <ul class="meta">
+      <li title="Distancia">4 km</li>
+      <li title="Desnivel">↑ 340 m</li>
+      <li class="dif dif-4" title="Dificultad: media-alta">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>media-alta
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/nava.html"
+   data-zona="Iregua" data-nivel="1" data-km="6.0"
+   data-texto="laguna la nava villoslada de cameros iregua">
+  <div class="card-img">
+    <img src="img/nava/foto-1-m.jpg" alt="Sendero por el pinar" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Iregua</span>
+  </div>
+  <div class="card-body">
+    <h3>Laguna La Nava</h3>
+    <p class="card-loc">Villoslada de Cameros</p>
+    <ul class="meta">
+      <li title="Distancia">6 km</li>
+      <li title="Desnivel">↑ 100 m</li>
+      <li class="dif dif-1" title="Dificultad: baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/cebollera.html"
+   data-zona="Iregua" data-nivel="3" data-km="12.0"
+   data-texto="cebollera villoslada de cameros iregua">
+  <div class="card-img">
+    <img src="img/cebollera/foto-1-m.jpg" alt="Pista del Sillar" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Iregua</span>
+  </div>
+  <div class="card-body">
+    <h3>Cebollera</h3>
+    <p class="card-loc">Villoslada de Cameros</p>
+    <ul class="meta">
+      <li title="Distancia">12 km</li>
+      <li title="Desnivel">↑ 350 m</li>
+      <li class="dif dif-3" title="Dificultad: media">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>media
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/esteban.html"
+   data-zona="Iregua" data-nivel="1" data-km="0.5"
+   data-texto="ermita de san esteban castañares de las cuevas iregua">
+  <div class="card-img">
+    <img src="img/esteban/foto-1-m.jpg" alt="Ermita de San Esteban" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Iregua</span>
+  </div>
+  <div class="card-body">
+    <h3>Ermita de San Esteban</h3>
+    <p class="card-loc">Castañares de las Cuevas</p>
+    <ul class="meta">
+      <li title="Distancia">0,5 km</li>
+      <li title="Desnivel">↑ 100 m</li>
+      <li class="dif dif-1" title="Dificultad: baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/soto.html"
+   data-zona="Leza" data-nivel="2" data-km="4.0"
+   data-texto="cañón del leza soto en cameros leza">
+  <div class="card-img">
+    <img src="img/soto/foto-1-m.jpg" alt="Sendero que recorre el Cañón" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Leza</span>
+  </div>
+  <div class="card-body">
+    <h3>Cañón del Leza</h3>
+    <p class="card-loc">Soto en Cameros</p>
+    <ul class="meta">
+      <li title="Distancia">4 km</li>
+      <li title="Desnivel">↑ 180 m</li>
+      <li class="dif dif-2" title="Dificultad: media-baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>media-baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/sanroman.html"
+   data-zona="Leza" data-nivel="3" data-km="10.0"
+   data-texto="dehesa de san román san román de cameros leza">
+  <div class="card-img">
+    <img src="img/sanroman/foto-1-m.jpg" alt="Dehesa de San Román" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Leza</span>
+  </div>
+  <div class="card-body">
+    <h3>Dehesa de San Román</h3>
+    <p class="card-loc">San Román de Cameros</p>
+    <ul class="meta">
+      <li title="Distancia">10 km</li>
+      <li title="Desnivel">↑ 340 m</li>
+      <li class="dif dif-3" title="Dificultad: media">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>media
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/prudencio.html"
+   data-zona="Leza" data-nivel="1" data-km="2.5"
+   data-texto="monasterio de san prudencio ribafrecha - clavijo leza">
+  <div class="card-img">
+    <img src="img/prudencio/foto-1-m.jpg" alt="Puerta del monasterio" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Leza</span>
+  </div>
+  <div class="card-body">
+    <h3>Monasterio de San Prudencio</h3>
+    <p class="card-loc">Ribafrecha - Clavijo</p>
+    <ul class="meta">
+      <li title="Distancia">2,5 km</li>
+      <li title="Desnivel">↑ 200 m</li>
+      <li class="dif dif-1" title="Dificultad: baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/reinares.html"
+   data-zona="Jubera" data-nivel="1" data-km="3.0"
+   data-texto="reinares santa marina jubera">
+  <div class="card-img">
+    <img src="img/reinares/foto-1-m.jpg" alt="Puente de acceso a Reinares" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Jubera</span>
+  </div>
+  <div class="card-body">
+    <h3>Reinares</h3>
+    <p class="card-loc">Santa Marina</p>
+    <ul class="meta">
+      <li title="Distancia">3 km</li>
+      <li title="Desnivel">↑ 100 m</li>
+      <li class="dif dif-1" title="Dificultad: baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/prejano.html"
+   data-zona="Cidacos" data-nivel="1" data-km="5.0"
+   data-texto="barranco de las puertas préjano cidacos">
+  <div class="card-img">
+    <img src="img/prejano/foto-1-m.jpg" alt="Cascada y senda en Arroyo de las Puertas" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Cidacos</span>
+  </div>
+  <div class="card-body">
+    <h3>Barranco de las Puertas</h3>
+    <p class="card-loc">Préjano</p>
+    <ul class="meta">
+      <li title="Distancia">5 km</li>
+      <li title="Desnivel">↑ 100 m</li>
+      <li class="dif dif-1" title="Dificultad: baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+<a class="card ruta-card" href="rutas/penalba.html"
+   data-zona="Cidacos" data-nivel="1" data-km="3.0"
+   data-texto="ermita de peñalba arnedillo cidacos">
+  <div class="card-img">
+    <img src="img/penalba/foto-1-m.jpg" alt="Vista de Arnedillo" loading="lazy" width="640" height="480">
+    <span class="chip chip-zona">Cidacos</span>
+  </div>
+  <div class="card-body">
+    <h3>Ermita de Peñalba</h3>
+    <p class="card-loc">Arnedillo</p>
+    <ul class="meta">
+      <li title="Distancia">3 km</li>
+      <li title="Desnivel">↑ 150 m</li>
+      <li class="dif dif-1" title="Dificultad: baja">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>baja
+      </li>
+    </ul>
+  </div>
+</a>
+
+  </div>
+  <div class="empty" id="empty" hidden>
+    <p>Ninguna ruta cumple esos filtros.</p>
+    <button class="btn btn-ghost" id="reset">Quitar filtros</button>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot">
+      <div>
+        <p class="foot-title">La Rioja, Lugares con encanto</p>
+        <p>Paseos y rutas a pie por lugares encantadores de La Rioja.</p>
+      </div>
+      <div>
+        <p class="foot-title">Explorar</p>
+        <p><a href="rutas.html">Todas las rutas</a><br><a href="presentacion.html">Presentación</a><br><a href="aviso-legal.html">Aviso legal y privacidad</a></p>
+      </div>
+      <div>
+        <p class="foot-title">Escríbeme</p>
+        <p><a href="mailto:carmelozz@hotmail.com">carmelozz@hotmail.com</a></p>
+      </div>
+    </div>
+    <div class="wrap legal">
+      <p>Las rutas se realizan bajo la responsabilidad de cada persona. Consulta la previsión meteorológica, lleva mapa y agua, y respeta el entorno.
+      Mapas base: Servicio Geográfico del Ejército. Cartografía de contexto: Esri, HERE, Garmin y colaboradores de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+    <button class="lb-close" aria-label="Cerrar">×</button>
+    <figure><img alt=""><figcaption></figcaption></figure>
+  </div>
+
+  <script src="assets/vendor/leaflet.js"></script>
+  
+  <script src="assets/main.js"></script>
+</body>
+</html>

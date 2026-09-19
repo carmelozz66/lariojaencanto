@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% from "_card.html" import card %}
+{% block title %}{{ site.nombre }} · Senderismo por La Rioja{% endblock %}
+{% block main %}
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">Senderismo · La Rioja</p>
+      <h1>Lugares con <em>encanto</em></h1>
+      <p class="lead">Paseos sencillos para descubrir montañas, arroyos, aldeas y ermitas riojanas. Cada ruta, con su mapa, sus fotos y el recorrido paso a paso.</p>
+      <div class="cta">
+        <a class="btn" href="rutas.html">Ver todas las rutas</a>
+        <a class="btn btn-ghost" href="presentacion.html">Cómo funciona</a>
+      </div>
+      <ul class="stats">
+        <li><b>{{ rutas|length }}</b><span>rutas</span></li>
+        <li><b>{{ zonas|length }}</b><span>comarcas</span></li>
+        <li><b>{{ (rutas|selectattr('nivel','le',2)|list|length) }}</b><span>muy fáciles</span></li>
+      </ul>
+    </div>
+    <div class="hero-map">
+      <div id="map" class="map" role="img" aria-label="Mapa de La Rioja con las rutas"></div>
+      <p class="map-note">Pulsa un punto para ver la ruta. Localizaciones aproximadas.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="section-head">
+    <h2>Para empezar</h2>
+    <a class="more" href="rutas.html">Ver las {{ rutas|length }} →</a>
+  </div>
+  <div class="grid">
+    {% for r in destacadas %}{{ card(r, '') }}{% endfor %}
+  </div>
+</section>
+
+<section class="section band">
+  <div class="wrap">
+    <div class="section-head"><h2>Explora por comarca</h2></div>
+    <div class="zonas">
+      {% for z in zonas %}
+      <a class="zona" href="rutas.html#zona={{ z }}">
+        <span class="zona-name">{{ z }}</span>
+        {% set n = rutas|selectattr('zona','equalto',z)|list|length %}<span class="zona-n">{{ n }} {{ 'ruta' if n == 1 else 'rutas' }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script>window.RUTAS = {{ datos|tojson }};</script>{% endblock %}

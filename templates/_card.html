@@ -1,0 +1,21 @@
+{% macro card(r, base) %}
+<a class="card ruta-card" href="{{ base }}rutas/{{ r.slug }}.html"
+   data-zona="{{ r.zona }}" data-nivel="{{ r.nivel }}" data-km="{{ r.km }}"
+   data-texto="{{ (r.titulo ~ ' ' ~ r.localidad ~ ' ' ~ r.zona)|lower }}">
+  <div class="card-img">
+    {% if r.fotos %}<img src="{{ base }}img/{{ r.slug }}/foto-1-m.jpg" alt="{{ r.fotos[0].pie }}" loading="lazy" width="640" height="480">{% endif %}
+    <span class="chip chip-zona">{{ r.zona }}</span>
+  </div>
+  <div class="card-body">
+    <h3>{{ r.titulo }}</h3>
+    <p class="card-loc">{{ r.localidad }}</p>
+    <ul class="meta">
+      <li title="Distancia">{{ r.km_txt }}</li>
+      <li title="Desnivel">↑ {{ r.desnivel }} m</li>
+      <li class="dif dif-{{ r.nivel }}" title="Dificultad: {{ r.dificultad }}">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>{{ r.dificultad }}
+      </li>
+    </ul>
+  </div>
+</a>
+{% endmacro %}

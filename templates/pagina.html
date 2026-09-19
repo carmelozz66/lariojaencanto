@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ pag.titulo }} · {{ site.nombre }}{% endblock %}
+{% block desc %}{{ pag.entradilla or site.descripcion }}{% endblock %}
+{% block main %}
+<section class="page-head wrap">
+  <h1>{{ pag.titulo }}</h1>
+  {% if pag.entradilla %}<p class="lead">{{ pag.entradilla }}</p>{% endif %}
+</section>
+<div class="wrap narrow prose">
+  {{ html|safe }}
+  {% if activo == 'contacto' %}
+  <p class="cta"><a class="btn" href="mailto:{{ site.email }}">Escribir a {{ site.email }}</a></p>
+  {% endif %}
+</div>
+{% endblock %}
