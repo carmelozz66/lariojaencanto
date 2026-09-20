@@ -143,7 +143,7 @@ def vista_form(slug=None):
 <fieldset><legend>Imágenes</legend><div class="row">
  <div>{foto(1, 'foto-1.jpg')}<label>Pie de la foto 1<input name="foto_1_pie" value="{g('foto_1_pie')}"></label></div>
  <div>{foto(2, 'foto-2.jpg')}<label>Pie de la foto 2<input name="foto_2_pie" value="{g('foto_2_pie')}"></label></div>
- </div>{foto(0, 'mapa.jpg')}</fieldset>
+ </div></fieldset>
 <fieldset><legend>Track GPS (GPX)</legend>
  <p style="margin:0 0 8px">{track_estado}</p>
  <label>Subir o sustituir el track <small>(archivo .gpx; se guardará como <b id="trkname">{E(build.track_name(m.get('titulo','')) or 'nombre-de-la-ruta')}.gpx</b>)</small><input type="file" name="track.gpx" accept=".gpx,application/gpx+xml,text/xml"></label>
