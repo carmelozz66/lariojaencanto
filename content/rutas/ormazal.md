@@ -5,8 +5,8 @@ localidad: "Viniegra de Arriba"
 punto_partida: "Viniegra de Arriba"
 terreno: "camino y senda"
 ida_vuelta: true
-distancia_km: 13
-desnivel_m: 350
+distancia_km: 12.8
+desnivel_m: 400
 dificultad: "media"
 epoca: "primavera (deshielo) y otoño"
 resumen: "Casi toda la gente habitual del mundo de la montaña en La Rioja conoce el barranco del Río Urbión. Pero son menos los que se han adentrado en lo que yo llamo “su hermano pequeño”, el Arroyo de Ormazal; un barranco procedente también de las estribaciones del Pico Urbión. Para mí este arroyo es una reproducción en miniatura del de Urbión, pero durante los meses del deshielo: abril, mayo y junio, el caudal que lleva lo hace hermoso como pocos. Pozas, pequeñas cascadas, torrentes... Es bastante largo, pero como no tiene desnivel apreciable podemos dedicarle toda una mañana y acceder hasta el lugar que yo os propongo en el mapa como destino final, un refugio de piedra situado en una pequeña loma."
