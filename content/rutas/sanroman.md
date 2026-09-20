@@ -5,8 +5,8 @@ localidad: "San Román de Cameros"
 punto_partida: "San Román de Cameros"
 terreno: "camino y senda"
 ida_vuelta: true
-distancia_km: 10
-desnivel_m: 340
+distancia_km: 9.8
+desnivel_m: 390
 dificultad: "media"
 epoca: "primavera y otoño"
 resumen: "Muchos de los pueblos y aldeas del Camero Viejo conservan todavía sus dehesas. En su momento las dehesas constituyeron una singular forma de aprovechamiento ganadero y forestal para estas zonas rurales en las que el ganado era la principal fuente de riqueza. Desgraciadamente, en la actualidad hay muy pocas que se hayan conservado lo suficientemente bien como para poder pasear por su interior; y os puedo asegurar que el pasear por el interior de una dehesa tiene un \"encanto\" especial. Pues bien, la dehesa de San Román no sólo cumple este requisito sino que además está intentando ser repoblada en aquellas zonas en las que el pasto, el ganado y el mal criterio del hombre habían ganado la batalla a los árboles."
