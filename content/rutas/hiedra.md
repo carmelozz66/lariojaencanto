@@ -5,8 +5,8 @@ localidad: "Anguiano - Viniegra de Abajo"
 punto_partida: "Puente la Hiedra"
 terreno: "senda y camino"
 ida_vuelta: true
-distancia_km: 14
-desnivel_m: 300
+distancia_km: 13.9
+desnivel_m: 580
 dificultad: "media"
 epoca: "todo el año"
 resumen: "Un peculiar puente cuyo lado norte está adornado por una espectacular cortina de hiedra; ese es el protagonista de este \"Lugar con encanto\". Se encuentra situado a pie de carretera, lo cual en principio no se presta a grandes paseos. Pero si tenemos en cuenta que constituye el punto de partida del antiguo camino por el que se accedía a Ventrosa desde el Valle del Najerilla, mucho, mucho antes de que las carreteras existiesen, pues tenemos un completo menú al que dedicar nuestra jornada. Ventrosa sorprende siempre a sus nuevos visitantes; un pueblo oculto como pocos, pero a la vez coqueto y muy cuidado."
