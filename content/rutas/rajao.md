@@ -4,8 +4,8 @@ zona: "Najerilla"
 localidad: "Tobía"
 punto_partida: "El Rajao"
 terreno: "camino"
-distancia_km: 8
-desnivel_m: 280
+distancia_km: 9.4
+desnivel_m: 380
 dificultad: "media-baja"
 epoca: "primavera y otoño"
 resumen: "Cuando se trata de dar un tranquilo paseo por un hayedo este \"Lugar con encanto\" es un candidato perfecto. Un ancho camino nos guiará a lo largo de todo el recorrido, y si queremos \"perdernos\" y explorar un poco a nuestro aire el inmenso bosque, también tendremos esa opción. Para los más aventureros, un austero refugio nos da la posibilidad de pernoctar en la zona. Ya sabéis; cenar a la luz de los frontales o las velas, charlar junto a la chimenea, levantarnos del saco por la mañana y lavarnos la cara con agua del arroyo, peinarse sin espejo..."

@@ -5,8 +5,8 @@ localidad: "Santa Marina"
 punto_partida: "carretera 1 km antes de Sta. Marina"
 terreno: "camino y senda"
 ida_vuelta: true
-distancia_km: 3
-desnivel_m: 100
+distancia_km: 2.7
+desnivel_m: 125
 dificultad: "baja"
 epoca: "todo el año"
 resumen: "Según como se mire, cuarenta años pueden ser un breve espacio dentro de nuestra historia o toda una eternidad. Pues ese es el tiempo que ha pasado desde que muchas de las aldeas de la cuenca del Río Jubera quedaron deshabitadas. Hay muchas para visitar y algunas son también protagonistas de otros capítulos de \"Lugares con encanto\", pero puestos a escoger una, yo me quedo con Reinares. Una vez completado el asfaltado de la carretera que asciende hasta Santa Marina, ahora mismo, esta aldea está a un paso de “la civilización”, pero permanece anclada en el pasado. Si miramos su ubicación en el mapa, vemos que estaba situada lejos de cualquier vía de comunicación importante. La esbelta espadaña de su iglesia, el pequeño puente de piedra por el que se accede a ella y el coqueto arroyo que pasa junto a esta aldea la hacen un lugar idóneo para dejar aparcado el coche y trasladarnos durante unas horas a “otro mundo”."
