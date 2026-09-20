@@ -5,8 +5,8 @@ localidad: "Préjano"
 punto_partida: "Préjano"
 terreno: "camino y senda"
 ida_vuelta: true
-distancia_km: 5
-desnivel_m: 100
+distancia_km: 4.4
+desnivel_m: 115
 dificultad: "baja"
 epoca: "primavera"
 resumen: "El principal 'encanto' que tiene este barranco es el de que, a pesar de encontrarse escondido en una de las zonas más secas de la geografía riojana, durante un par de meses al año se permite el lujo de obsequiarnos con un espectáculo de agua; multitud de pozas, cascadas... Los visitantes siempre suelen dejar a un lado el pueblo de Préjano ya que no se encuentra en ninguna vía de comunicación principal. Y para los que llegan a pararse en esta localidad el Barranco de las Puertas también suele pasar desapercibido. Recientemente se ha hecho llegar hasta él un ramal de la Vía Verde del Cidacos, pero yo recomiendo remontarlo intentando ir lo más cerca posible de su cauce. Nuestro paseo nos hará pasar también junto a la boca de antiguas minas, un hermoso puente de piedra y algunas recreaciones de yacimientos de icnitas."

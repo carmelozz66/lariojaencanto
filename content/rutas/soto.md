@@ -5,8 +5,8 @@ localidad: "Soto en Cameros"
 punto_partida: "Soto en Cameros"
 terreno: "senda"
 ida_vuelta: true
-distancia_km: 4
-desnivel_m: 180
+distancia_km: 4.2
+desnivel_m: 270
 dificultad: "media-baja"
 epoca: "todo el año"
 resumen: "Normalmente todos los que hemos viajado hasta Soto en Cameros por carretera nos hemos sentido sobrecogidos al atravesar el Cañón del Río Leza, en el tramo comprendido entre Leza y Soto en Cameros. Con el tiempo uno se acostumbra a esta impresión, pero existe una forma mucho más indicada para meternos dentro del paisaje del cañón, y de ella trata este \"Lugar con encanto\". De la parte alta del pueblo de Soto en Cameros, junto a la Ermita de Nuestra Señora del Cortijo, parte un precioso sendero que transita por la margen derecha de la garganta. El recorrido, además, está señalizado mediante marcas pintadas ya que cuenta con otro aliciente, y es que pasa por dos yacimientos de icnitas muy didácticos. Todo esto, junto con la compañía del vuelo de numerosos buitres son algunos de los atractivos que puede ofrecernos este coqueto paseo."
