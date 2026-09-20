@@ -5,8 +5,8 @@ localidad: "Arnedillo"
 punto_partida: "Arnedillo"
 terreno: "camino y senda"
 ida_vuelta: true
-distancia_km: 3
-desnivel_m: 150
+distancia_km: 2.8
+desnivel_m: 175
 dificultad: "baja"
 epoca: "todo el año"
 resumen: "Volvemos a visitar la zona menos húmeda de La Rioja. Como contraste, la naturaleza ha dotado al entorno de Arnedillo con surgencias de aguas termales y unos escarpados riscos donde anidan numerosas colonias de buitres. Si cuando acudimos a Arnedillo nos limitamos a atravesarlo por carretera o simplemente a visitar su balneario nos estaremos perdiendo la perspectiva más coqueta de esta población. El paseo que os propongo va en busca de esta hermosa vista de Arnedillo, con su iglesia y el paseo junto al río Cidacos. La ermita que vamos a visitar, la de Peñalba, también responde con generosidad a su mágico topónimo, y es que no recuerdo ninguna ermita o montaña llamada Peñalba que no se haya ganado con su ubicación su precioso nombre."

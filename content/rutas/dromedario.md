@@ -5,8 +5,8 @@ localidad: "Brieva - Ortigosa"
 punto_partida: "Puerto de Piedra Hincada"
 terreno: "pista"
 ida_vuelta: true
-distancia_km: 11
-desnivel_m: 230
+distancia_km: 11.2
+desnivel_m: 280
 dificultad: "baja"
 epoca: "primavera, verano, otoño"
 resumen: "No, no se trata de una broma, pero es cierto que en las proximidades del Cabezo del Santo hay un dromedario. No suele viajar mucho, así que lo más probable es que lo sigáis encontrando dónde yo lo vi por última vez. Toda la línea de cumbre que hace de linde entre los municipios de Ortigosa, Brieva y Villoslada es hermosa como pocas. Andar por ella y acercarse hasta las estribaciones del Cabezo del Santo es todo un placer. Como fondo de paisaje contaremos con las Sierras de Cebollera y Urbión; todo un entretenimiento para aquellos de vosotros a los que os guste identificar cumbres."
