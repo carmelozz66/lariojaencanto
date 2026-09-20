@@ -3,11 +3,18 @@
 {% block title %}{{ r.titulo }} · Ruta a pie en La Rioja · {{ site.nombre }}{% endblock %}
 {% block desc %}{{ r.titulo }} ({{ r.localidad }}): {{ r.km_txt }}, {{ r.desnivel }} m de desnivel, dificultad {{ r.dificultad }}. {{ r.resumen[:110] }}…{% endblock %}
 {% block main %}
-<article class="ruta">
+<article class="ruta{% if r.movil_nuevo %} m2{% endif %}">
   <header class="ruta-head wrap">
     <nav class="crumbs" aria-label="Migas de pan"><a href="../index.html">Inicio</a> / <a href="../rutas.html#zona={{ r.zona }}">{{ r.zona }}</a></nav>
     <h1>{{ r.titulo }}</h1>
     <p class="lead">{{ r.localidad }} · comarca del {{ r.zona }}</p>
+    {% if r.track %}
+    <div class="actions-m noprint" aria-label="Acciones rápidas del track">
+      <a class="btn btn-small" href="../tracks/{{ r.track_file }}" data-track="gpx" data-file="{{ r.track_file }}">⬇ GPX</a>
+      <a class="btn btn-small btn-ghost" href="{{ r.slug }}-mapa.html" target="_blank">🗺 Mapa</a>
+      <button type="button" class="btn btn-small btn-ghost open-viewer-m">🌍 3D</button>
+    </div>
+    {% endif %}
   </header>
 
   <div class="wrap ruta-grid">
@@ -41,7 +48,7 @@
     </div>
 
     <aside class="ruta-side">
-      <div class="panel">
+      <div class="panel panel-start">
         <h2>Punto de partida</h2>
         <p>{{ r.punto_partida }}</p>
         {% if r.track %}

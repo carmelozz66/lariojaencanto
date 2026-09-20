@@ -122,7 +122,9 @@
     var tdr = $('#track-data'), tpts = [];
     try { tpts = JSON.parse(tdr.textContent); } catch (e) {}
     if (tpts.length > 1) {
-      var mm = baseMap(mini, { scrollWheelZoom: false }, true);
+      // en ficha "móvil nuevo" el mapa pequeño es una vista previa: un dedo sobre él no bloquea el desplazamiento de la página
+      var vista = !!mini.closest('.m2') && L.Browser.mobile;
+      var mm = baseMap(mini, { scrollWheelZoom: false, dragging: !vista, touchZoom: !vista, doubleClickZoom: !vista }, true);
       var ln = drawTrack(mm, tpts);
       mm.fitBounds(ln.getBounds(), { padding: [20, 20] });
       var openFull = function () { window.open(mini.dataset.url, '_blank'); };
@@ -308,7 +310,7 @@
     }
     function closeViewer() { stopOrbit(); viewer.hidden = true; document.body.style.overflow = ''; }
 
-    vbtn.addEventListener('click', openViewer);
+    $$('#open-viewer,.open-viewer-m').forEach(function (b) { b.addEventListener('click', openViewer); });
     viewer.addEventListener('click', function (e) {
       var b = e.target.closest('button'); if (!b || !vmap) { if (b && b.classList.contains('v-close')) closeViewer(); return; }
       if (b.classList.contains('v-close')) return closeViewer();

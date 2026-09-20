@@ -210,3 +210,32 @@ h1 em{color:var(--wine);font-style:italic;font-weight:500}
 .anchor{scroll-margin-top:90px}
 #mapfull-map{flex:1;min-height:0}
 .map.mini-rich{height:300px;cursor:pointer}
+
+/* Móvil: acciones rápidas (solo ≤700px; en PC no se ven) */
+.actions-m{display:none}
+@media (max-width:700px){
+  .ruta.m2 .actions-m{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:8px;margin:16px 0 4px}
+  .ruta.m2 .actions-m .btn{padding:11px 8px;font-size:.95rem;justify-content:center;text-align:center;white-space:nowrap}
+  /* datos más compactos: 3 columnas */
+  .ruta.m2 .facts{grid-template-columns:repeat(3,1fr);margin-bottom:1.2rem}
+  .ruta.m2 .facts li{padding:10px 11px}
+  .ruta.m2 .facts li>span{font-size:.64rem;letter-spacing:.05em}
+  .ruta.m2 .facts b{font-size:.95rem}
+  .ruta.m2 .facts small{font-size:.7rem}
+  /* orden: datos → presentación → mapa → fotos → texto → salida → track */
+  .ruta.m2 .ruta-main,.ruta.m2 .ruta-side{display:contents}
+  .ruta.m2 .facts{order:1}
+  .ruta.m2 .intro{order:2;margin-bottom:.4rem}
+  .ruta.m2 .panel-situ{order:3}
+  .ruta.m2 .photos{order:4}
+  .ruta.m2 .ruta-main>h2{order:5;margin-bottom:0}
+  .ruta.m2 .ruta-main>.prose{order:6}
+  .ruta.m2 .panel-start{order:7}
+  .ruta.m2 .panel-track{order:8}
+  .ruta.m2 .ruta-grid{gap:18px}
+  .ruta.m2 .map.mini-rich{height:240px}
+  /* fotos en fila deslizable */
+  .ruta.m2 .photos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+  .ruta.m2 .photos figure{flex:0 0 84%;scroll-snap-align:center}
+  .ruta.m2 .photos img{height:210px}
+}
