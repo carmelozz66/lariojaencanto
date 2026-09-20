@@ -5,7 +5,7 @@ localidad: "Valgañón"
 punto_partida: "Iglesia Nª Señora de Tres Fuentes"
 terreno: "camino y senda"
 epoca: "primavera y otoño"
-resumen: "La visita a este pequeño bosquete de acebos no sólo nos dará la oportunidad de contemplar espléndidos ejemplares de esta especie protegida, sino que también nos permitirá hacer todo un curso de botánica riojana. A lo largo del recorrido veremos aulagas, brezos, majuelos, quejigos, hayas, avellanos, serbales... En fin, será difícil que en un espacio tan corto podamos contemplar tanta diversidad vegetal como la que nos encontraremos a lo largo de este paseo. La iglesia románica de Nuestra Señora de Tres Fuentes, del siglo XII, también será un buen motivo para acercarnos hasta la linde con las tierras de burgos."
+resumen: "La visita a este pequeño bosquete de acebos no sólo nos dará la oportunidad de contemplar espléndidos ejemplares de esta especie protegida, sino que también nos permitirá hacer todo un curso de botánica riojana. A lo largo del recorrido veremos aulagas, brezos, majuelos, quejigos, hayas, avellanos, serbales... En fin, será difícil que en un espacio tan corto podamos contemplar tanta diversidad vegetal como la que nos encontraremos a lo largo de este paseo. La iglesia románica de Nuestra Señora de Tres Fuentes, del siglo XII, también será un buen motivo para acercarnos hasta la linde con las tierras de Burgos."
 foto_1_pie: "Iglesia y fuente de Nª Señora de Tres Fuentes"
 foto_2_pie: "Acebal de Valgañón"
 distancia_km: 5.5
