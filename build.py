@@ -4,7 +4,7 @@
 
 Requisitos: pip install jinja2 markdown pyyaml pillow
 """
-import json, math, re, shutil, sys, unicodedata
+import hashlib, json, math, re, shutil, sys, unicodedata
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
@@ -229,8 +229,11 @@ def build():
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
     env.filters["md"] = md
 
+    # versión de los recursos: cambia al modificarse el CSS/JS, así el navegador nunca usa copias antiguas
+    ver = hashlib.md5(b"".join(p.read_bytes() for p in sorted((ROOT / "static").rglob("*")) if p.is_file() and "fonts" not in p.parts)).hexdigest()[:8]
+
     def render(name, out, base="", **ctx):
-        html = env.get_template(name).render(site=site, rutas=rutas, zonas=zonas, base=base, **ctx)
+        html = env.get_template(name).render(site=site, rutas=rutas, zonas=zonas, base=base, ver=ver, **ctx)
         target = DIST / out
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html, encoding="utf-8")

@@ -8,8 +8,8 @@
   <link rel="icon" href="{{ base }}assets/favicon.svg" type="image/svg+xml">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="{{ base }}assets/fonts.css">
-  <link rel="stylesheet" href="{{ base }}assets/vendor/leaflet.css">
-  <link rel="stylesheet" href="{{ base }}assets/style.css">
+  <link rel="stylesheet" href="{{ base }}assets/vendor/leaflet.css?v={{ ver }}">
+  <link rel="stylesheet" href="{{ base }}assets/style.css?v={{ ver }}">
 </head>
 <body>
   <div class="viewer" id="mapfull">
@@ -23,7 +23,7 @@
     <div id="mapfull-map" data-page="1"></div>
   </div>
   <script type="application/json" id="track-data">{{ r.track.puntos|tojson }}</script>
-  <script src="{{ base }}assets/vendor/leaflet.js"></script>
-  <script src="{{ base }}assets/main.js"></script>
+  <script src="{{ base }}assets/vendor/leaflet.js?v={{ ver }}"></script>
+  <script src="{{ base }}assets/main.js?v={{ ver }}"></script>
 </body>
 </html>

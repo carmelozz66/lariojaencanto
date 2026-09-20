@@ -12,8 +12,8 @@
   <link rel="icon" href="{{ base }}assets/favicon.svg" type="image/svg+xml">
   {% if not site.indexar %}<meta name="robots" content="noindex, nofollow">{% endif %}
   <link rel="stylesheet" href="{{ base }}assets/fonts.css">
-  <link rel="stylesheet" href="{{ base }}assets/vendor/leaflet.css">
-  <link rel="stylesheet" href="{{ base }}assets/style.css">
+  <link rel="stylesheet" href="{{ base }}assets/vendor/leaflet.css?v={{ ver }}">
+  <link rel="stylesheet" href="{{ base }}assets/style.css?v={{ ver }}">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -65,8 +65,8 @@
     <figure><img alt=""><figcaption></figcaption></figure>
   </div>
 
-  <script src="{{ base }}assets/vendor/leaflet.js"></script>
+  <script src="{{ base }}assets/vendor/leaflet.js?v={{ ver }}"></script>
   {% block scripts %}{% endblock %}
-  <script src="{{ base }}assets/main.js"></script>
+  <script src="{{ base }}assets/main.js?v={{ ver }}"></script>
 </body>
 </html>
