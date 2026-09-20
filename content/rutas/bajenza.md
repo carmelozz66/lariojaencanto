@@ -5,8 +5,8 @@ localidad: "Islallana"
 punto_partida: "Islallana"
 terreno: "camino y senda"
 ida_vuelta: true
-distancia_km: 4
-desnivel_m: 340
+distancia_km: 4.6
+desnivel_m: 375
 dificultad: "media-alta"
 epoca: "todo el año"
 resumen: "El ascenso hasta esta peña seguramente nos hará sentir eufóricos; fatigados, pero eufóricos. Eso sí, deberemos tener cuidado de que al llegar arriba la emoción no nos nuble la vista y nos haga dar dos pasos de más, o que una inocente tos, seguida de un traspiés nos lleve a tener que comenzar de nuevo la ascensión desde abajo. Las palabras difícilmente pueden transmitir la sensación de verticalidad y de \"tener el mundo a nuestros pies\" que percibimos desde la cima de esta peña. Y para aquellos de vosotros que tengáis vértigo; bueno, pues hay otros muchos \"Lugares con encanto\"."

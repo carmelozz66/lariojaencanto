@@ -5,8 +5,8 @@ localidad: "Clavijo"
 punto_partida: "Clavijo"
 terreno: "carretera y senda"
 ida_vuelta: true
-distancia_km: 3
-desnivel_m: 150
+distancia_km: 2.6
+desnivel_m: 165
 dificultad: "media-baja"
 epoca: "todo el año"
 resumen: "Este picudo monte está pensado, sin duda, para los montañeros sin mucho garbo que quieran hacer una “meritoria” ascensión. Una corta subida a pie desde el pueblo de Clavijo, pasando por la Ermita de Santiago, nos sitúa en uno de los miradores más impresionantes de La Rioja; cruz y altar incluidos. Esta clásica propuesta de mirador puede completarse con otra mucho menos frecuente y por ello más tentadora aún. Para ello debemos aprovechar para acudir a este monte uno de esos días de invierno en que la densa niebla se asienta en el Valle del Ebro. Normalmente cuando lleguemos a la altura de Clavijo ya habremos superado la cota de la niebla, y a partir de aquí el espectáculo está asegurado. Casi dan ganas de caminar sobre las nubes."
