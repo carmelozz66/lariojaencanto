@@ -223,12 +223,12 @@ h1 em{color:var(--wine);font-style:italic;font-weight:500}
   .ruta.m2 .facts li>span{font-size:.64rem;letter-spacing:.05em}
   .ruta.m2 .facts b{font-size:.95rem}
   .ruta.m2 .facts small{font-size:.7rem}
-  /* orden: datos → presentación → mapa → fotos → texto → salida → track */
+  /* orden: fotos → datos → presentación → mapa → texto → salida → track */
   .ruta.m2 .ruta-main,.ruta.m2 .ruta-side{display:contents}
-  .ruta.m2 .facts{order:1}
-  .ruta.m2 .intro{order:2;margin-bottom:.4rem}
-  .ruta.m2 .panel-situ{order:3}
-  .ruta.m2 .photos{order:4}
+  .ruta.m2 .photos{order:1}
+  .ruta.m2 .facts{order:2}
+  .ruta.m2 .intro{order:3;margin-bottom:.4rem}
+  .ruta.m2 .panel-situ{order:4}
   .ruta.m2 .ruta-main>h2{order:5;margin-bottom:0}
   .ruta.m2 .ruta-main>.prose{order:6}
   .ruta.m2 .panel-start{order:7}
@@ -238,5 +238,5 @@ h1 em{color:var(--wine);font-style:italic;font-weight:500}
   /* fotos en fila deslizable */
   .ruta.m2 .photos{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:0;padding-bottom:6px;-webkit-overflow-scrolling:touch}
   .ruta.m2 .photos figure{flex:0 0 84%;scroll-snap-align:center}
-  .ruta.m2 .photos img{height:210px}
+  .ruta.m2 .photos img{height:190px}
 }

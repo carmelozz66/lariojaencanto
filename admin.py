@@ -129,7 +129,7 @@ def vista_form(slug=None):
 </div>
 <label>Punto de partida<input name="punto_partida" required value="{g('punto_partida')}"></label>
 <div class="row">
- <label>Distancia (km)<input name="distancia_km" type="number" step="0.1" min="0" required value="{g('distancia_km')}"></label>
+ <label>Distancia (km) <small>(si la ruta tiene GPX, se usa la del GPX)</small><input name="distancia_km" type="number" step="0.1" min="0" required value="{g('distancia_km')}"></label>
  <label>Desnivel (m)<input name="desnivel_m" type="number" min="0" required value="{g('desnivel_m')}"></label>
  <label>Dificultad<select name="dificultad">{difs}</select></label>
 </div>

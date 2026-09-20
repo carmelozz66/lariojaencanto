@@ -169,6 +169,11 @@ def load_rutas():
         meta["nivel"] = NIVEL.get(str(meta.get("dificultad", "")).strip().lower(), 3)
         meta["km"] = float(meta.get("distancia_km", 0) or 0)
         meta["desnivel"] = int(meta.get("desnivel_m", 0) or 0)
+        gpx = find_track(meta["titulo"])
+        meta["track"] = parse_gpx(gpx) if gpx else None
+        meta["track_src"] = gpx
+        if meta["track"]:  # con GPX, la distancia sale siempre del track: así coincide en todas partes
+            meta["km"] = float(f"{meta['track']['km']:.1f}")
         km_txt = f"{meta['km']:g}".replace(".", ",")
         meta["km_txt"] = km_txt + " km"
         meta["tiempo"] = tiempo_orientativo(meta["km"], meta["desnivel"])
@@ -183,9 +188,6 @@ def load_rutas():
                 meta["fotos"].append({"n": i, "pie": meta.get(f"foto_{i}_pie") or meta["titulo"]})
         meta["tiene_mapa"] = (media / "mapa.jpg").exists()
         meta["track_file"] = track_name(meta["titulo"]) + ".gpx"
-        gpx = find_track(meta["titulo"])
-        meta["track"] = parse_gpx(gpx) if gpx else None
-        meta["track_src"] = gpx
         if meta["track"]:  # el punto de salida real del track sustituye a la coordenada aproximada
             meta["lat"], meta["lng"] = meta["track"]["inicio"]
         meta.setdefault("orden", 999)

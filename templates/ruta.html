@@ -35,7 +35,7 @@
         {% for f in r.fotos %}
         <figure>
           <a href="../img/{{ r.slug }}/foto-{{ f.n }}.jpg" data-lightbox="{{ f.pie }}">
-            <img src="../img/{{ r.slug }}/foto-{{ f.n }}.jpg" alt="{{ f.pie }}" width="{{ f.w }}" height="{{ f.h }}" loading="lazy">
+            <img src="../img/{{ r.slug }}/foto-{{ f.n }}.jpg" alt="{{ f.pie }}" width="{{ f.w }}" height="{{ f.h }}" loading="{{ 'eager' if loop.first else 'lazy' }}">
           </a>
           <figcaption>{{ f.pie }}</figcaption>
         </figure>
@@ -71,7 +71,6 @@
         </p>
         <ul class="track-facts">
           <li><span>Distancia GPS</span><b>{{ r.track.km_txt }}</b></li>
-          <li><span>Desnivel</span><b>+{{ r.track.sube }} / −{{ r.track.baja }} m</b></li>
           {% if r.track.alt_min is not none %}<li><span>Altitud</span><b>{{ r.track.alt_min }}–{{ r.track.alt_max }} m</b></li>{% endif %}
         </ul>
         {% if r.track.perfil %}
