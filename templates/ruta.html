@@ -82,8 +82,8 @@
       {% if r.track %}
       <div class="panel panel-situ">
         <h2>Mapa del recorrido</h2>
-        <div id="mini-map" class="map mini mini-rich" data-rich="1" data-titulo="{{ r.titulo }}"></div>
-        <button type="button" class="btn btn-block btn-ghost" style="margin-top:10px" id="open-map">⤢ Ampliar mapa</button>
+        <div id="mini-map" class="map mini mini-rich" data-rich="1" data-url="{{ r.slug }}-mapa.html" data-titulo="{{ r.titulo }}"></div>
+        <button type="button" class="btn btn-block btn-ghost" style="margin-top:10px" id="open-map" data-url="{{ r.slug }}-mapa.html">⤢ Ampliar mapa</button>
         <script type="application/json" id="track-data">{{ r.track.puntos|tojson }}</script>
       </div>
       {% else %}
@@ -94,16 +94,6 @@
       {% endif %}
     </aside>
   </div>
-
-  {% if r.track %}
-  <div class="viewer" id="mapfull" hidden role="dialog" aria-modal="true" aria-label="Mapa del recorrido a pantalla completa">
-    <div class="viewer-bar">
-      <b>{{ r.titulo }}</b>
-      <span class="viewer-tools"><button type="button" class="pill v-close" aria-label="Cerrar mapa">Cerrar ✕</button></span>
-    </div>
-    <div id="mapfull-map"></div>
-  </div>
-  {% endif %}
 
   {% if r.track %}
   <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Visor del track en 3D">

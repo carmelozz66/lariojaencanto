@@ -250,6 +250,10 @@ def build():
                prev=rutas[i - 1] if i > 0 else None, next=rutas[i + 1] if i < len(rutas) - 1 else None,
                relacionadas=[x for x in rutas if x["zona"] == r["zona"] and x["slug"] != r["slug"]][:3])
 
+    for r in rutas:
+        if r["track"]:
+            render("mapa.html", f"rutas/{r['slug']}-mapa.html", base="../", r=r)
+
     for p in sorted((CONTENT / "paginas").glob("*.md")):
         meta, body = split_front_matter(p.read_text(encoding="utf-8"))
         render("pagina.html", f"{p.stem}.html", pag=meta, html=md(body), activo=p.stem)

@@ -70,6 +70,24 @@
   }
 
   /* Mini mapa de la ruta */
+  /* Mapa a pantalla completa (página propia, se abre en otra pestaña) */
+  var fullPage = $('#mapfull-map');
+  if (fullPage && fullPage.dataset.page) {
+    var fpts = [];
+    try { fpts = JSON.parse($('#track-data').textContent); } catch (e) {}
+    if (fpts.length > 1) {
+      var fm = baseMap(fullPage, { scrollWheelZoom: true }, true);
+      var fl = drawTrack(fm, fpts);
+      fm.fitBounds(fl.getBounds(), { padding: [40, 40] });
+    }
+    var closeTab = function () {
+      window.close();
+      setTimeout(function () { window.location.href = $('#mapfull-ficha').href; }, 200);
+    };
+    $('.v-close').addEventListener('click', closeTab);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeTab(); });
+  }
+
   var mini = $('#mini-map');
   if (mini && mini.dataset.rich) {
     var tdr = $('#track-data'), tpts = [];
@@ -78,22 +96,10 @@
       var mm = baseMap(mini, { scrollWheelZoom: false }, true);
       var ln = drawTrack(mm, tpts);
       mm.fitBounds(ln.getBounds(), { padding: [20, 20] });
-      var full = $('#mapfull'), fmap = null;
-      var openFull = function () {
-        full.hidden = false; document.body.style.overflow = 'hidden';
-        if (!fmap) {
-          fmap = baseMap($('#mapfull-map'), { scrollWheelZoom: true }, true);
-          drawTrack(fmap, tpts);
-        }
-        fmap.invalidateSize();
-        fmap.fitBounds(L.polyline(tpts).getBounds(), { padding: [40, 40] });
-      };
-      var closeFull = function () { full.hidden = true; document.body.style.overflow = ''; };
+      var openFull = function () { window.open(mini.dataset.url, '_blank'); };
       var ob = $('#open-map');
       if (ob) ob.addEventListener('click', openFull);
       mm.on('click', openFull);
-      $('.v-close', full).addEventListener('click', closeFull);
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !full.hidden) closeFull(); });
     }
   } else if (mini) {
     var lat = parseFloat(mini.dataset.lat), lng = parseFloat(mini.dataset.lng);
