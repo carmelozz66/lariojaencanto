@@ -208,3 +208,5 @@ h1 em{color:var(--wine);font-style:italic;font-weight:500}
 
 
 .anchor{scroll-margin-top:90px}
+#mapfull-map{flex:1;min-height:0}
+.map.mini-rich{height:300px;cursor:pointer}

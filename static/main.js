@@ -11,18 +11,43 @@
   });
 
   /* Mapa base */
-  function baseMap(el, opts) {
+  function baseMap(el, opts, rich) {
     var map = L.map(el, opts);
     var esri = function (svc, txt) {
       return L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/' + svc + '/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 17, attribution: 'Tiles &copy; Esri &mdash; ' + txt
       });
     };
-    var topo = esri('World_Topo_Map', 'Esri, HERE, Garmin, USGS, OpenStreetMap contributors').addTo(map);
+    var topo = esri('World_Topo_Map', 'Esri, HERE, Garmin, USGS, OpenStreetMap contributors');
     var calle = esri('World_Street_Map', 'Esri, HERE, Garmin, OpenStreetMap contributors');
     var sat = esri('World_Imagery', 'Esri, Maxar, Earthstar Geographics');
+    if (rich) {
+      var otm = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        subdomains: 'abc', maxZoom: 17,
+        attribution: 'Datos &copy; OpenStreetMap, SRTM &middot; Estilo &copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (CC-BY-SA)'
+      }).addTo(map);
+      var ign = L.tileLayer('https://www.ign.es/wmts/mapa-raster?service=WMTS&request=GetTile&version=1.0.0&layer=MTN&style=default&tilematrixset=GoogleMapsCompatible&tilematrix={z}&tilerow={y}&tilecol={x}&format=image/jpeg', {
+        maxZoom: 18, attribution: '&copy; <a href="https://www.ign.es" target="_blank" rel="noopener">Instituto Geográfico Nacional</a>'
+      });
+      L.control.layers({ 'OpenTopoMap': otm, 'IGN topográfico': ign, 'Esri topográfico': topo, 'Satélite': sat }, null, { collapsed: true }).addTo(map);
+      L.control.scale({ imperial: false }).addTo(map);
+      return map;
+    }
+    topo.addTo(map);
     L.control.layers({ 'Topográfico': topo, 'Callejero': calle, 'Satélite': sat }, null, { collapsed: true }).addTo(map);
     return map;
+  }
+  function drawTrack(map, pts) {
+    L.polyline(pts, { color: '#fff', weight: 8, opacity: .9, lineJoin: 'round' }).addTo(map);
+    var line = L.polyline(pts, { color: '#d6204f', weight: 4, opacity: 1, lineJoin: 'round' }).addTo(map);
+    var a = pts[0], b = pts[pts.length - 1];
+    var far = map.distance(a, b) > 150;
+    var dot = function (ll, col, txt) {
+      return L.circleMarker(ll, { radius: 8, color: '#fff', weight: 3, fillColor: col, fillOpacity: 1 }).addTo(map).bindTooltip(txt);
+    };
+    dot(a, '#2d5f3a', far ? 'Salida' : 'Salida y llegada');
+    if (far) dot(b, '#1b1b1b', 'Llegada');
+    return line;
   }
   var pin = L.divIcon({ className: '', html: '<div class="pin"></div>', iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -10] });
 
@@ -46,7 +71,31 @@
 
   /* Mini mapa de la ruta */
   var mini = $('#mini-map');
-  if (mini) {
+  if (mini && mini.dataset.rich) {
+    var tdr = $('#track-data'), tpts = [];
+    try { tpts = JSON.parse(tdr.textContent); } catch (e) {}
+    if (tpts.length > 1) {
+      var mm = baseMap(mini, { scrollWheelZoom: false }, true);
+      var ln = drawTrack(mm, tpts);
+      mm.fitBounds(ln.getBounds(), { padding: [20, 20] });
+      var full = $('#mapfull'), fmap = null;
+      var openFull = function () {
+        full.hidden = false; document.body.style.overflow = 'hidden';
+        if (!fmap) {
+          fmap = baseMap($('#mapfull-map'), { scrollWheelZoom: true }, true);
+          drawTrack(fmap, tpts);
+        }
+        fmap.invalidateSize();
+        fmap.fitBounds(L.polyline(tpts).getBounds(), { padding: [40, 40] });
+      };
+      var closeFull = function () { full.hidden = true; document.body.style.overflow = ''; };
+      var ob = $('#open-map');
+      if (ob) ob.addEventListener('click', openFull);
+      mm.on('click', openFull);
+      $('.v-close', full).addEventListener('click', closeFull);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !full.hidden) closeFull(); });
+    }
+  } else if (mini) {
     var lat = parseFloat(mini.dataset.lat), lng = parseFloat(mini.dataset.lng);
     if (!isNaN(lat)) {
       var m = baseMap(mini, { scrollWheelZoom: false, zoomControl: true }).setView([lat, lng], 11);

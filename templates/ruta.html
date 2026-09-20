@@ -79,6 +79,15 @@
         <p class="map-note">El track de esta ruta todavía no está disponible.</p>
         {% endif %}
       </div>
+      {% if r.mapa_interactivo and r.track %}
+      <div class="panel panel-situ">
+        <h2>Mapa del recorrido</h2>
+        <div id="mini-map" class="map mini mini-rich" data-rich="1" data-titulo="{{ r.titulo }}"></div>
+        <button type="button" class="btn btn-block btn-ghost" style="margin-top:10px" id="open-map">⤢ Ampliar mapa</button>
+        <p class="map-note">Recorrido según el track GPS. Pulsa el mapa para verlo a pantalla completa.</p>
+        <script type="application/json" id="track-data">{{ r.track.puntos|tojson }}</script>
+      </div>
+      {% else %}
       {% if r.tiene_mapa %}
       <div class="panel">
         <h2>Mapa del recorrido</h2>
@@ -97,9 +106,20 @@
         <p class="map-note">{{ 'Recorrido según el track GPS.' if r.track else 'Localización aproximada.' }}</p>
         {% if r.track %}<script type="application/json" id="track-data">{{ r.track.puntos|tojson }}</script>{% endif %}
       </div>
+      {% endif %}
       <button class="btn btn-ghost btn-block noprint" onclick="window.print()">Imprimir ficha</button>
     </aside>
   </div>
+
+  {% if r.mapa_interactivo and r.track %}
+  <div class="viewer" id="mapfull" hidden role="dialog" aria-modal="true" aria-label="Mapa del recorrido a pantalla completa">
+    <div class="viewer-bar">
+      <b>{{ r.titulo }}</b>
+      <span class="viewer-tools"><button type="button" class="pill v-close" aria-label="Cerrar mapa">Cerrar ✕</button></span>
+    </div>
+    <div id="mapfull-map"></div>
+  </div>
+  {% endif %}
 
   {% if r.track %}
   <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Visor del track en 3D">

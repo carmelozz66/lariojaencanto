@@ -15,6 +15,7 @@ foto_2_pie: "Vista de Ventrosa"
 lat: 42.222
 lng: -2.79
 orden: 3
+mapa_interactivo: true
 ---
 
 El Puente la Hiedra se encuentra situado en la LR-113, sobre el Río Najerilla; a unos 14 kilómetros de Anguiano y unos 3 kilómetros de la conocida como Venta de Goyo. Cruzamos el puente y comenzamos a ascender por un ancho sendero. Enseguida trazamos una cerrada curva hacia la derecha y continuamos ascendiendo a media ladera por el interior del bosque. Más arriba, un refugio de cazadores hace de transición para abordar un paisaje totalmente despejado con sorprendentes vistas de la zona de las Viniegras. Avanzamos ahora por un camino que nos acercará hasta la Fuente Avellano, momento en el que vemos abajo el pueblo de Ventrosa. A partir de aquí podemos optar por descender hasta nuestro destino utilizando una tranquila y amplia pista o aventurarnos por alguno de los muchos senderos como el de la imagen de arriba.
