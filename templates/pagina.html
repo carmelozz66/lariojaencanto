@@ -8,7 +8,8 @@
 </section>
 <div class="wrap narrow prose">
   {{ html|safe }}
-  {% if activo == 'contacto' %}
+  {% if activo == 'presentacion' %}
+  <h2 id="contacto" class="anchor">Contacto</h2>
   <p class="cta"><a class="btn" href="mailto:{{ site.email }}">Escribir a {{ site.email }}</a></p>
   {% endif %}
 </div>
