@@ -54,7 +54,7 @@
   /* Mapa de inicio */
   var big = $('#map');
   if (big && window.RUTAS) {
-    var map = baseMap(big, { scrollWheelZoom: false });
+    var map = baseMap(big, { scrollWheelZoom: false }, true);
     var pts = [];
     window.RUTAS.forEach(function (r) {
       if (r.lat == null) return;
@@ -67,6 +67,35 @@
     window.addEventListener('load', fit);
     map.on('focus', function () { map.scrollWheelZoom.enable(); });
     map.on('blur', function () { map.scrollWheelZoom.disable(); });
+    var openAll = function () { window.open($('#open-map').dataset.url, '_blank'); };
+    $('#open-map').addEventListener('click', openAll);
+    map.on('click', openAll);
+  }
+
+  /* Mapa general a pantalla completa (página propia) */
+  var gen = $('#mapfull-map');
+  if (gen && gen.dataset.general && window.RUTAS_MAPA) {
+    var gm = baseMap(gen, { scrollWheelZoom: true }, true);
+    var all = [];
+    window.RUTAS_MAPA.forEach(function (r) {
+      var pop = '<b>' + r.titulo + '</b><br>' + r.km + ' km · ' + r.dificultad + '<br><a href="rutas/' + r.slug + '.html">Ver ruta →</a>';
+      if (r.puntos.length > 1) {
+        L.polyline(r.puntos, { color: '#fff', weight: 6, opacity: .8, lineJoin: 'round' }).addTo(gm);
+        L.polyline(r.puntos, { color: '#d6204f', weight: 3, opacity: 1, lineJoin: 'round' }).addTo(gm).bindPopup(pop);
+        r.puntos.forEach(function (p) { all.push(p); });
+      }
+      if (r.lat != null) {
+        L.marker([r.lat, r.lng], { icon: pin, title: r.titulo }).addTo(gm).bindPopup(pop);
+        all.push([r.lat, r.lng]);
+      }
+    });
+    if (all.length) gm.fitBounds(all, { padding: [40, 40] });
+    var closeGen = function () {
+      window.close();
+      setTimeout(function () { window.location.href = $('#mapfull-ficha').href; }, 200);
+    };
+    $('.v-close').addEventListener('click', closeGen);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeGen(); });
   }
 
   /* Mini mapa de la ruta */

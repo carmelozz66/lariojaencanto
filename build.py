@@ -250,6 +250,12 @@ def build():
                prev=rutas[i - 1] if i > 0 else None, next=rutas[i + 1] if i < len(rutas) - 1 else None,
                relacionadas=[x for x in rutas if x["zona"] == r["zona"] and x["slug"] != r["slug"]][:3])
 
+    mapa = [
+        {"slug": r["slug"], "titulo": r["titulo"], "km": r["km"], "dificultad": r["dificultad"],
+         "lat": r["lat"], "lng": r["lng"], "puntos": r["track"]["puntos"] if r["track"] else []}
+        for r in rutas
+    ]
+    render("mapa-general.html", "mapa-general.html", mapa=mapa)
     for r in rutas:
         if r["track"]:
             render("mapa.html", f"rutas/{r['slug']}-mapa.html", base="../", r=r)
