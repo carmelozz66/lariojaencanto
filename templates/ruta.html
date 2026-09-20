@@ -3,7 +3,7 @@
 {% block title %}{{ r.titulo }} · Ruta a pie en La Rioja · {{ site.nombre }}{% endblock %}
 {% block desc %}{{ r.titulo }} ({{ r.localidad }}): {{ r.km_txt }}, {{ r.desnivel }} m de desnivel, dificultad {{ r.dificultad }}. {{ r.resumen[:110] }}…{% endblock %}
 {% block main %}
-<article class="ruta{% if r.movil_nuevo %} m2{% endif %}">
+<article class="ruta m2">
   <header class="ruta-head wrap">
     <nav class="crumbs" aria-label="Migas de pan"><a href="../index.html">Inicio</a> / <a href="../rutas.html#zona={{ r.zona }}">{{ r.zona }}</a></nav>
     <h1>{{ r.titulo }}</h1>
