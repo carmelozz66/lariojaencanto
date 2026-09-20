@@ -4,8 +4,8 @@ zona: "Iregua"
 localidad: "Castañares de las Cuevas"
 punto_partida: "Venta La Paula"
 terreno: "senda"
-distancia_km: 0.5
-desnivel_m: 100
+distancia_km: 0.8
+desnivel_m: 145
 dificultad: "baja"
 epoca: "todo el año"
 resumen: "Esta ermita tiene múltiples encantos: su ubicación, su tamaño, su estructura, los frescos de sus paredes. E imagino que como en todas las ermitas, su historia. Sería curioso poseer una máquina del tiempo y poder retroceder en ella para saber qué personas y por qué motivo decidieron construir en un determinado lugar una ermita. Sin duda un lugar hermoso para ver amanecer.., si no hubiese que madrugar tanto."
