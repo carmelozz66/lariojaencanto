@@ -9,15 +9,13 @@ El planteamiento es sencillo: para conocer cada lugar se propone un recorrido qu
 
 De todas formas, en todos los paseos se indica su longitud y dificultad, de forma que cada uno de vosotros pueda hacer una valoración previa del tiempo que puede costar realizarlo; circunstancia sobre todo muy útil si vamos acompañados de niños.
 
-## Sobre los mapas
+## Descarga el track
 
-Los mapas que acompañan a cada ruta marcan el **punto de partida**, el **recorrido a seguir**, los **tramos especialmente atractivos** y el propio **«lugar con encanto»**.
+Cada ruta tiene su track en GPX para llevarlo al GPS o al móvil, y en KML para Google Earth.
 
-Si los imprimís en su escala original (1:50.000) resultan bastante detallados, pero si podéis contar con los originales, que son del Servicio Geográfico del Ejército, pues mucho mejor. También os resultará de gran ayuda llevar una brújula; no hace falta que sea muy precisa, se trata tan solo de poder orientar nuestro mapa en aquellos puntos del recorrido en los que se pueda presentar alguna duda.
+## Míralo antes en 3D
 
-## Un consejo para imprimir
-
-Si deseáis imprimir la ficha de un determinado «lugar con encanto», seleccionad el formato apaisado de hoja: así dispondréis de toda la información en una única página. La web ya está preparada para imprimirse de forma limpia.
+En cada ficha puedes visualizar el recorrido en 3D, con el relieve del terreno, para conocer las subidas y bajadas antes de salir.
 
 ## Y más lugares
 
