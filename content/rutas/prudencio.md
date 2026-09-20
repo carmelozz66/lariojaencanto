@@ -5,8 +5,8 @@ localidad: "Ribafrecha - Clavijo"
 punto_partida: "LR-250 entre Ribafrecha y Leza"
 terreno: "camino y senda"
 ida_vuelta: true
-distancia_km: 2.5
-desnivel_m: 200
+distancia_km: 2.6
+desnivel_m: 170
 dificultad: "baja"
 epoca: "todo el año"
 resumen: "El origen del Monasterio de San Prudencio se remonta al siglo X. Hoy en día únicamente podemos 'encantarnos', sorprendernos y admirarnos visitando sus ruinas. Hasta no llegar al monasterio y pasear por su interior no podemos hacernos idea de la grandiosidad que debió tener en sus tiempos de auge. Y es que es enorme, casi imponente, diría yo. Antes de realizar la visita os recomiendo que busquéis en Internet información sobre el monasterio (la hay abundante y muy currada), ya que el conocer su historia y sus leyendas será un magnífico aperitivo que os hará disfrutar aún más de esta cita con el pasado."

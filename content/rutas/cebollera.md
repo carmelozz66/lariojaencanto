@@ -4,8 +4,8 @@ zona: "Iregua"
 localidad: "Villoslada de Cameros"
 punto_partida: "\"El Achichuelo\""
 terreno: "camino y senda"
-distancia_km: 12
-desnivel_m: 350
+distancia_km: 9.4
+desnivel_m: 460
 dificultad: "media"
 epoca: "todo el año"
 resumen: "No podía faltar en la lista de \"Lugares con encanto\" de La Rioja un paseo por el Parque Natural Sierra de Cebollera. Nos aprovecharemos de la red básica de recorridos balizados del Parque y utilizaremos dos de ellos: el nº 3 \"Sendero del Achichuelo\" y el nº 4 \"Sendero de las Cascadas\", para realizar nuestro paseo del día. Estos recorridos forman parte de un conjunto de cinco cuya información se suministra en una pequeña carpeta que podéis conseguir en el Centro de Interpretación del Parque que está en el pueblo de Villoslada. Dicho Centro de Interpretación, con sus exposiciones y audiovisuales, será también una estupenda propuesta para completar nuestra jornada."
