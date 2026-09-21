@@ -13,7 +13,7 @@ foto_1_pie: "Ermita de San Esteban"
 foto_2_pie: "Frescos de la ermita"
 lat: 42.335
 lng: -2.4
-orden: 11
+orden: 12
 ---
 
 Partimos desde la venta La Paula, a pie de carretera, entre el túnel de Islallana y el cruce de Viguera. Allí seremos siempre bien recibidos, nos proporcionarán interesante información y la llave para poder visitar el interior de la ermita. El recorrido presenta pocas dudas; unas marcas de pintura verde nos guiarán. Pero es, como dicen en mi pueblo: 'to tieso', así que es aconsejable llevar botas o zapatillas de montaña. El resto es sencillo: ir tomando altura por una ladera abancalada llena de olivos hasta llegar a nuestro objetivo, que haciendo honor a su curiosa ubicación se nos desvela inesperadamente.

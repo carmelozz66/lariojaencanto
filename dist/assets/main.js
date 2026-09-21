@@ -24,6 +24,16 @@
     L.control.scale({ imperial: false }).addTo(map);
     return map;
   }
+  /* Waypoints del GPX (si los trae): marcador naranja con su nombre y altitud */
+  function drawWaypoints(map) {
+    var el = $('#wpt-data'), w = [];
+    try { w = JSON.parse(el.textContent); } catch (e) { return; }
+    w.forEach(function (p) {
+      var txt = (p.nombre || 'Punto de interés') + (p.ele != null ? ' · ' + p.ele + ' m' : '');
+      L.circleMarker([p.lat, p.lng], { radius: 9, color: '#fff', weight: 3, fillColor: '#e08a00', fillOpacity: 1, bubblingMouseEvents: false })
+        .addTo(map).bindTooltip(txt, { direction: 'top', offset: [0, -8] });
+    });
+  }
   function drawTrack(map, pts) {
     L.polyline(pts, { color: '#fff', weight: 8, opacity: .9, lineJoin: 'round' }).addTo(map);
     var line = L.polyline(pts, { color: '#d6204f', weight: 4, opacity: 1, lineJoin: 'round' }).addTo(map);
@@ -34,6 +44,7 @@
     };
     dot(a, '#2d5f3a', far ? 'Salida' : 'Salida y llegada');
     if (far) dot(b, '#1b1b1b', 'Llegada');
+    drawWaypoints(map);
     return line;
   }
   var pin = L.divIcon({ className: '', html: '<div class="pin"></div>', iconSize: [18, 18], iconAnchor: [9, 9], popupAnchor: [0, -10] });
@@ -220,11 +231,17 @@
       var e = p.getElementsByTagName('ele')[0];
       return p.getAttribute('lon') + ',' + p.getAttribute('lat') + ',' + (e ? e.textContent : 0);
     }).join(' ');
-    var esc = nombre.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    var x = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
+    var esc = x(nombre);
+    var wp = $$('wpt', doc).map(function (p) {
+      var n = p.getElementsByTagName('name')[0], e = p.getElementsByTagName('ele')[0];
+      return '<Placemark><name>' + x(n ? n.textContent : 'Punto de interés') + '</name><Point><coordinates>' +
+        p.getAttribute('lon') + ',' + p.getAttribute('lat') + ',' + (e ? e.textContent : 0) + '</coordinates></Point></Placemark>';
+    }).join('');
     return '<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>' + esc + '</name>' +
       '<Style id="t"><LineStyle><color>ff3f2f8a</color><width>4</width></LineStyle></Style>' +
       '<Placemark><name>' + esc + '</name><styleUrl>#t</styleUrl><LineString><tessellate>1</tessellate>' +
-      '<altitudeMode>clampToGround</altitudeMode><coordinates>' + c + '</coordinates></LineString></Placemark></Document></kml>';
+      '<altitudeMode>clampToGround</altitudeMode><coordinates>' + c + '</coordinates></LineString></Placemark>' + wp + '</Document></kml>';
   }
   document.addEventListener('click', function (e) {
     var a = e.target.closest('[data-track]');

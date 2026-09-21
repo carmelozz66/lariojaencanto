@@ -88,6 +88,7 @@
         <div id="mini-map" class="map mini mini-rich" data-rich="1" data-url="{{ r.slug }}-mapa.html" data-titulo="{{ r.titulo }}"></div>
         <button type="button" class="btn btn-block btn-ghost" style="margin-top:10px" id="open-map" data-url="{{ r.slug }}-mapa.html">⤢ Ampliar mapa</button>
         <script type="application/json" id="track-data">{{ r.track.puntos|tojson }}</script>
+        {% if r.track.waypoints %}<script type="application/json" id="wpt-data">{{ r.track.waypoints|tojson }}</script>{% endif %}
       </div>
       {% else %}
       <div class="panel panel-situ">

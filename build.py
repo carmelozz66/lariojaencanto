@@ -109,9 +109,25 @@ def parse_gpx(path):
         root = ET.parse(path).getroot()
     except ET.ParseError:
         return None
-    pts = []
+    pts, wpts = [], []
     for el in root.iter():
-        if el.tag.split("}")[-1] in ("trkpt", "rtept"):
+        tag = el.tag.split("}")[-1]
+        if tag == "wpt":
+            try:
+                w = {"lat": round(float(el.get("lat")), 6), "lng": round(float(el.get("lon")), 6), "nombre": "", "ele": None}
+            except (TypeError, ValueError):
+                continue
+            for c in el:
+                t = c.tag.split("}")[-1]
+                if t == "name":
+                    w["nombre"] = (c.text or "").strip()
+                elif t == "ele":
+                    try:
+                        w["ele"] = round(float(c.text))
+                    except (TypeError, ValueError):
+                        pass
+            wpts.append(w)
+        elif tag in ("trkpt", "rtept"):
             try:
                 lat, lon = float(el.get("lat")), float(el.get("lon"))
             except (TypeError, ValueError):
@@ -149,6 +165,7 @@ def parse_gpx(path):
         "sube": round(up), "baja": round(down),
         "alt_min": round(min(eles)) if eles else None, "alt_max": round(max(eles)) if eles else None,
         "perfil": None,
+        "waypoints": wpts,
     }
     if len(eles) > 2 and dist > 0:
         W, H, pad = 300, 90, 6

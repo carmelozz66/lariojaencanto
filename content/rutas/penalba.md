@@ -14,7 +14,7 @@ foto_1_pie: "Vista de Arnedillo"
 foto_2_pie: "Ermita de Peñalba"
 lat: 42.19
 lng: -2.17
-orden: 17
+orden: 18
 ---
 
 Llegando al Arnedillo por la carretera de Arnedo, sin llegar a entrar en su casco urbano, nos encontramos con un amplio aparcamiento a la derecha; lugar desde el que podemos comenzar nuestro paseo. Al otro lado del río nos espera un camino cementado que pasa junto al cementerio y a la ermita de San Andrés. El cemento se acaba y continuamos por un bonito sendero que nos va introduciendo poco a poco en un árido barranco. Al llegar bajo una línea eléctrica, en una confluencia de barrancos, seguiremos la dirección marcada por la línea eléctrica, por un sendero con mayor pendiente. Por el camino nos encontraremos una nueva ermita y una antigua nevera (muy didáctica). El ascenso culmina en un collado, precisamente donde está asentada la ermita de Peñalba. Retornaremos a Arnedillo por el mismo camino, pero seguramente que el recorrido nos parecerá muy distinto; ¿o no?

@@ -14,7 +14,7 @@ foto_1_pie: "Puente de acceso a Reinares"
 foto_2_pie: "Iglesia de Reinares"
 lat: 42.18
 lng: -2.22
-orden: 15
+orden: 16
 ---
 
 Aproximadamente 1 kilómetro antes de llegar a Santa Marina, en un suave collado, la carretera traza una curva hacia la izquierda, lugar del que también parte la carretera de acceso a la aldea de El Collado. Este será nuestro punto de partida. Comenzamos a andar por un camino que enseguida se interna en el bosque y desciende suavemente. Enseguida el camino nos lleva muy cerca del cauce de un arroyo, momento que aprovechamos para cruzar a su margen izquierda donde nos encontraremos con una senda que transita paralela al cauce. Tomamos este sendero, hacia la derecha, en suave descenso. Paulatinamente abandonamos el bosque y los bordes del sendero se van poblando de jara. Poco a poco nos vamos alejando del cauce del barranco y, tras un suave giro hacia la izquierda del sendero, vemos ya, a lo lejos, la aldea de Reinares. Enseguida cruzamos sobre un precioso puente de piedra y ascendemos un par de taludes para visitar la aldea.

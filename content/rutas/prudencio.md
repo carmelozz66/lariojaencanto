@@ -14,7 +14,7 @@ foto_1_pie: "Puerta del monasterio"
 foto_2_pie: "Vista del monasterio"
 lat: 42.32
 lng: -2.47
-orden: 14
+orden: 15
 ---
 
 Partimos desde el kilómetro 15,5 de la carretera LR-250, entre Ribafrecha y Leza. Allí la carretera traza una curva sobre un puente. Los restos de la antigua carretera nos servirán entonces de rastro para encontrar el inicio de nuestro paseo. Tomamos un camino que gana altura jalonado por fincas de cultivo y nos mantendrá siempre en la margen izquierda del Barranco de la Barriguilla. El camino nos acercará hasta el pie del monasterio, siempre visible. Entonces vadeamos un pequeño barranco seco y tomamos un empinado sendero que nos llevará hasta el muro norte del monasterio. A partir de aquí y prestando atención a donde ponemos nuestros pies podremos comenzar a recorrer el laberíntico interior del monasterio. Si lo deseamos también podemos llegar hasta el monasterio partiendo desde el pueblo de Clavijo. Tomaremos el camino asfaltado que asciende hacia la Ermita de Santiago y antes de llegar a ella tomamos un sendero muy evidente que desciende hacia la derecha buscando un barranco.

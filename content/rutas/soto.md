@@ -14,7 +14,7 @@ foto_1_pie: "Sendero que recorre el Cañón"
 foto_2_pie: "Vista Ermita Nuestra Señora del Cortijo"
 lat: 42.23
 lng: -2.4
-orden: 12
+orden: 13
 ---
 
 Partimos de Ermita de Nuestra Señora del Cortijo, a la que habremos accedido serpenteando por las empinadas y estrechas calles de Soto. Estamos en lo más alto del pueblo, y seguramente habremos visto durante el ascenso algunas indicaciones relativas los yacimientos de icnitas Soto1 y Soto2. Desde la ermita no nos costará mucho trabajo localizar el lugar por el que debemos continuar nuestro recorrido; se trata de un sendero que arranca a media altura y que progresa por la pared del cañón. Nada más nos queda que disfrutar del paseo; el primer yacimiento está cerca y al segundo nos costará llegar un poquito más.

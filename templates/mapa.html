@@ -23,6 +23,7 @@
     <div id="mapfull-map" data-page="1"></div>
   </div>
   <script type="application/json" id="track-data">{{ r.track.puntos|tojson }}</script>
+  {% if r.track.waypoints %}<script type="application/json" id="wpt-data">{{ r.track.waypoints|tojson }}</script>{% endif %}
   <script src="{{ base }}assets/vendor/leaflet.js?v={{ ver }}"></script>
   <script src="{{ base }}assets/main.js?v={{ ver }}"></script>
 </body>

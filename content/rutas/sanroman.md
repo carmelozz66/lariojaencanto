@@ -14,7 +14,7 @@ foto_1_pie: "Dehesa de San Román"
 foto_2_pie: "Muro que delimita la dehesa"
 lat: 42.19
 lng: -2.35
-orden: 13
+orden: 14
 ---
 
 El realizar este paseo es bastante sencillo, ya que coincide en su totalidad con un tramo del GR-93. Salimos de San Román por la carretera que se dirige a Jalón y enseguida tomamos un camino que parte a la derecha y comienza a ascender suavemente. Poco después cruzamos bajo el portón que da acceso a la dehesa y el entorno comienza a hacerse más atractivo. El camino finaliza y un cartel con un verso de Machado nos da la bienvenida al lugar. Nos adentramos definitivamente en el bosque de quejigos y continuamos andando por un sendero que mediante varias 'eses' va ganando altura por el interior de la dehesa. Ya bastante arriba, llegamos al muro y alambrada que delimitan la dehesa, punto en el que también salimos de la zona arbolada. Mi propuesta es la de continuar nuestro paseo hasta Torre en Cameros; el sendero, a pesar de haber dejado atrás el bosque, continua siendo muy atractivo y ayudados por las marcas de pintura nos será fácil llegar hasta este pueblo al que enseguida comprenderéis de donde le viene el nombre.
