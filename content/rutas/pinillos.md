@@ -15,6 +15,7 @@ foto_2_pie: "El Quejigo de Alejandro"
 lat: 42.199125
 lng: -2.597795
 orden: 9
+tiempo_h: 2
 ---
 
 Comenzamos el paseo atravesando cualquiera de las portezuelas metálicas de color verde que hay en la parte baja del pueblo. Enseguida identificamos algunas marcas de pintura blanca que nos acompañarán siempre, hasta llegar al Quejigo.
@@ -29,12 +30,10 @@ Más arriba, la presencia de algunas hayas nos anuncia la proximidad del Quejigo
 
 Para continuar el recorrido es aconsejable seguir la ruta mediante GPS. A partir de este punto, ya no hay señalización y la dehesa está atravesada por numerosos senderos, sin garantía de llevarnos a nuestro destino.
 
-Descendemos a media ladera y el sendero cada vez se hace más marcado. Llegamos junto a un oscuro rincón en una vaguada de frescas hayas.
+Descendemos a media ladera y el sendero cada vez se hace más marcado. Llegamos junto a un oscuro rincón en una vaguada de frescas hayas. Este es el punto de intersección con el antiguo sendero entre Pinillos y Gallinero de Cameros.
 
-Atravesamos en sentido descendente la corriente del pequeño arroyo, girando hacia nuestra izquierda.
+Atravesamos la corriente del pequeño arroyo, girando hacia nuestra izquierda y tomando dirección norte.
 
-Enseguida vemos que ya hemos tomado la dirección de regreso hacia Pinillos.
+Poco a poco, dejamos atrás el bosque de hayas. El sendero discurre a media ladera, con mal firme, entre pequeños arbustos. Pinillos comienza a divisarse a lo lejos.
 
-Dejamos atrás el bosque de hayas y faldeamos a media ladera por un sendero con mal firme entre pequeños arbustos.
-
-Atravesamos una pequeña corriente de agua, pasamos junto a un pequeño lavadero y ascendemos al pueblo para finalizar el recorrido.
+Al pie del pueblo, atravesamos un regato de agua, pasamos junto a un pequeño lavadero y ascendemos, para así finalizar el recorrido.

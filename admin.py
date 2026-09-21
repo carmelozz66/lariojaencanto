@@ -257,8 +257,11 @@ class H(BaseHTTPRequestHandler):
                 fm = ["---"] + [f"{k}: {yq(c.get(k, ''))}" for k in CAMPOS_TEXTO]
                 fm += [f"distancia_km: {float(c['distancia_km'].replace(',', '.')):g}", f"desnivel_m: {int(float(c['desnivel_m']))}",
                        f"dificultad: {yq(c['dificultad'])}", f"ida_vuelta: {'true' if 'ida_vuelta' in c else 'false'}",
-                       f"lat: {float(c['lat'].replace(',', '.'))}", f"lng: {float(c['lng'].replace(',', '.'))}", f"orden: {orden}", "---", "",
-                       c["cuerpo"].strip(), ""]
+                       f"lat: {float(c['lat'].replace(',', '.'))}", f"lng: {float(c['lng'].replace(',', '.'))}", f"orden: {orden}"]
+                th = leer_ruta(slug).get("tiempo_h") if (RUTAS / f"{slug}.md").exists() else None
+                if th:  # tiempo fijado a mano: el formulario no lo muestra, pero se conserva al guardar
+                    fm.append(f"tiempo_h: {th}")
+                fm += ["---", "", c["cuerpo"].strip(), ""]
                 if (RUTAS / f"{slug}.md").exists():  # si cambia el nombre, el track se renombra con él
                     viejo = build.find_track(leer_ruta(slug).get("titulo", ""))
                     nuevo = build.TRACKS / (build.track_name(c["titulo"]) + ".gpx")

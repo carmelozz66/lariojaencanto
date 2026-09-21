@@ -69,8 +69,9 @@ def save_image(src, dst, max_w, quality=82):
         return im.width, im.height
 
 
-def tiempo_orientativo(km, desnivel):
-    horas = km / 4 + desnivel / 500
+def tiempo_orientativo(km, desnivel, horas=None):
+    if horas is None:
+        horas = km / 4 + desnivel / 500
     horas = max(0.5, round(horas * 2) / 2)
     h = int(horas)
     txt = f"{h} h" if horas == h else (f"{h} h 30 min" if h else "30 min")
@@ -193,7 +194,9 @@ def load_rutas():
             meta["km"] = float(f"{meta['track']['km']:.1f}")
         km_txt = f"{meta['km']:g}".replace(".", ",")
         meta["km_txt"] = km_txt + " km"
-        meta["tiempo"] = tiempo_orientativo(meta["km"], meta["desnivel"])
+        # `tiempo_h` (opcional, en horas) fija el tiempo a mano; si no, se calcula con la fórmula
+        th = meta.get("tiempo_h")
+        meta["tiempo"] = tiempo_orientativo(0, 0, float(th)) if th else tiempo_orientativo(meta["km"], meta["desnivel"])
         meta["html"] = md(paragraphs(body))
         meta["resumen_html"] = md(paragraphs(meta.get("resumen", "")))
         meta["ida_vuelta"] = bool(meta.get("ida_vuelta", False))
