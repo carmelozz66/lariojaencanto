@@ -6,7 +6,7 @@ punto_partida: "Villoslada de Cameros"
 terreno: "senda"
 ida_vuelta: true
 distancia_km: 6
-desnivel_m: 100
+desnivel_m: 204
 dificultad: "baja"
 epoca: "todas, pero mejor en el deshielo"
 resumen: "A pesar de su claro rastro sobre el mapa esta laguna permanece \"oculta\" prácticamente durante todo el año. Son escasas las semanas en que el agua procedente del deshielo utiliza la vaguada de La Nava como depósito para formar esta hermosa laguna. Pero, lo cierto, es que cuando está llena, de verdad, impresiona. El paseo propuesto en esta ocasión coincide con un pequeño tramo de la llamada \"Vía Romana del Iregua\", que actualmente se une la localidad de Viguera con el Puerto de Piqueras mediante cinco tramos perfectamente balizados."

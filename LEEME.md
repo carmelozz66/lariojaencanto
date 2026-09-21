@@ -6,7 +6,7 @@ Sitio estático (HTML/CSS/JS puro). No necesita base de datos ni PHP: la carpeta
 
 1. **Doble clic en `EDITOR.bat`** → se abre el editor en el navegador.
 2. Pestaña **Rutas**: crear, editar o borrar rutas (formulario con fotos, mapa y punto en el mapa).
-3. Pestaña **Textos**: editar Presentación y Contacto.
+3. Pestaña **Textos**: editar Presentación y Aviso legal (el correo de contacto va al final de Presentación).
 4. Al guardar, la web se regenera sola en la carpeta `dist/`.
 5. Para publicar: subir el contenido de `dist/` al servidor.
 
@@ -33,8 +33,6 @@ Basta con copiar el archivo a `tracks/` y ejecutar `GENERAR.bat` (o subirlo desd
 Si hay track, la ficha muestra además el recorrido sobre el mapa, la distancia y el desnivel medidos, el perfil de altitud y enlaces a Google Maps; y el punto de salida del track sustituye a la coordenada aproximada de la ruta.
 
 Con track hay un botón **Descargar track (GPX)** y un enlace a KML para Google Earth. `GENERAR.bat` crea junto a cada GPX un `.gpx.js` que permite la descarga incluso abriendo la web como archivo local; al publicar hay que subir toda la carpeta `dist/`.
-
-> `tracks/paraisourbion.gpx` es actualmente un archivo de prueba (no está en Urbión): sustitúyelo por el real.
 
 ## Estructura
 
