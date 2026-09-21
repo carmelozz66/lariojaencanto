@@ -12,7 +12,6 @@
     <div class="actions-m noprint" aria-label="Acciones rápidas del track">
       <a class="btn btn-small" href="../tracks/{{ r.track_file }}" data-track="gpx" data-file="{{ r.track_file }}">⬇ GPX</a>
       <a class="btn btn-small btn-ghost" href="{{ r.slug }}-mapa.html" target="_blank">🗺 Mapa</a>
-      <button type="button" class="btn btn-small btn-ghost open-viewer-m">🌍 3D</button>
     </div>
     {% endif %}
   </header>
@@ -64,7 +63,6 @@
         <h2>Track GPS</h2>
         {% if r.track %}
         <a class="btn btn-block" href="../tracks/{{ r.track_file }}" data-track="gpx" data-file="{{ r.track_file }}">⬇ Descargar track (GPX)</a>
-        <button type="button" class="btn btn-block btn-ghost" style="margin-top:8px" id="open-viewer" data-titulo="{{ r.titulo }}">🌍 Visualizar track en 3D</button>
         <p class="track-links">
           <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query={{ r.lat }},{{ r.lng }}">Salida en Google Maps ↗</a>
           <a href="../tracks/{{ r.track_file }}" data-track="kml" data-file="{{ r.track_file }}" title="Archivo KML para abrir en Google Earth">Google Earth (KML)</a>
@@ -81,7 +79,6 @@
         {% endif %}
         {% else %}
         <span class="btn btn-block btn-disabled" role="link" aria-disabled="true">⬇ Descargar track (GPX)</span>
-        <span class="btn btn-block btn-disabled" style="margin-top:8px" role="link" aria-disabled="true">🌍 Visualizar track en 3D</span>
         <p class="map-note">El track de esta ruta todavía no está disponible.</p>
         {% endif %}
       </div>
@@ -100,23 +97,6 @@
       {% endif %}
     </aside>
   </div>
-
-  {% if r.track %}
-  <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Visor del track en 3D">
-    <div class="viewer-bar">
-      <b>{{ r.titulo }}</b>
-      <span class="viewer-tools">
-        <button type="button" class="pill on" data-capa="sat">Satélite</button>
-        <button type="button" class="pill" data-capa="topo">Topográfico</button>
-        <button type="button" class="pill on" id="v-3d">Relieve 3D</button>
-        <button type="button" class="pill" id="v-orbit" title="Girar alrededor del recorrido">Girar</button>
-        <button type="button" class="pill v-close" aria-label="Cerrar visor">Cerrar ✕</button>
-      </span>
-    </div>
-    <div id="viewer-map"></div>
-    <p class="viewer-msg" id="viewer-msg" hidden></p>
-  </div>
-  {% endif %}
 
   <nav class="wrap prevnext" aria-label="Otras rutas">
     {% if prev %}<a class="pn prev" href="{{ prev.slug }}.html"><span>← Anterior</span><b>{{ prev.titulo }}</b></a>{% else %}<span></span>{% endif %}

@@ -12,8 +12,8 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="../assets/fonts.css">
-  <link rel="stylesheet" href="../assets/vendor/leaflet.css?v=5687b16e">
-  <link rel="stylesheet" href="../assets/style.css?v=5687b16e">
+  <link rel="stylesheet" href="../assets/vendor/leaflet.css?v=b924a9aa">
+  <link rel="stylesheet" href="../assets/style.css?v=b924a9aa">
 </head>
 <body>
   <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -46,7 +46,6 @@
     <div class="actions-m noprint" aria-label="Acciones rápidas del track">
       <a class="btn btn-small" href="../tracks/canondelleza.gpx" data-track="gpx" data-file="canondelleza.gpx">⬇ GPX</a>
       <a class="btn btn-small btn-ghost" href="soto-mapa.html" target="_blank">🗺 Mapa</a>
-      <button type="button" class="btn btn-small btn-ghost open-viewer-m">🌍 3D</button>
     </div>
     
   </header>
@@ -105,7 +104,6 @@
         <h2>Track GPS</h2>
         
         <a class="btn btn-block" href="../tracks/canondelleza.gpx" data-track="gpx" data-file="canondelleza.gpx">⬇ Descargar track (GPX)</a>
-        <button type="button" class="btn btn-block btn-ghost" style="margin-top:8px" id="open-viewer" data-titulo="Cañón del Leza">🌍 Visualizar track en 3D</button>
         <p class="track-links">
           <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=42.287189,-2.42495">Salida en Google Maps ↗</a>
           <a href="../tracks/canondelleza.gpx" data-track="kml" data-file="canondelleza.gpx" title="Archivo KML para abrir en Google Earth">Google Earth (KML)</a>
@@ -132,23 +130,6 @@
       
     </aside>
   </div>
-
-  
-  <div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Visor del track en 3D">
-    <div class="viewer-bar">
-      <b>Cañón del Leza</b>
-      <span class="viewer-tools">
-        <button type="button" class="pill on" data-capa="sat">Satélite</button>
-        <button type="button" class="pill" data-capa="topo">Topográfico</button>
-        <button type="button" class="pill on" id="v-3d">Relieve 3D</button>
-        <button type="button" class="pill" id="v-orbit" title="Girar alrededor del recorrido">Girar</button>
-        <button type="button" class="pill v-close" aria-label="Cerrar visor">Cerrar ✕</button>
-      </span>
-    </div>
-    <div id="viewer-map"></div>
-    <p class="viewer-msg" id="viewer-msg" hidden></p>
-  </div>
-  
 
   <nav class="wrap prevnext" aria-label="Otras rutas">
     <a class="pn prev" href="esteban.html"><span>← Anterior</span><b>Ermita de San Esteban</b></a>
@@ -222,7 +203,7 @@
     </div>
     <div class="wrap legal">
       <p>Las rutas se realizan bajo la responsabilidad de cada persona. Consulta la previsión meteorológica, lleva mapa y agua, y respeta el entorno.
-      Mapas base: Servicio Geográfico del Ejército. Cartografía de contexto: Esri, HERE, Garmin y colaboradores de <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>.</p>
+      Mapas: datos © <a href="https://www.openstreetmap.org/copyright">colaboradores de OpenStreetMap</a> y SRTM; estilo © <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA). Imágenes de satélite: Esri, Maxar, Earthstar Geographics.</p>
     </div>
   </footer>
 
@@ -231,8 +212,8 @@
     <figure><img alt=""><figcaption></figcaption></figure>
   </div>
 
-  <script src="../assets/vendor/leaflet.js?v=5687b16e"></script>
+  <script src="../assets/vendor/leaflet.js?v=b924a9aa"></script>
   
-  <script src="../assets/main.js?v=5687b16e"></script>
+  <script src="../assets/main.js?v=b924a9aa"></script>
 </body>
 </html>

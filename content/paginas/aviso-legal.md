@@ -13,13 +13,13 @@ Las rutas descritas son paseos por el medio natural y se realizan bajo la respon
 
 ## Propiedad intelectual
 
-Los textos, fotografías y mapas elaborados para esta web pertenecen a su autor. Los mapas de fondo proceden del Servicio Geográfico del Ejército. Se permite compartir el enlace a la web; para reproducir contenidos, solicita permiso por correo.
+Los textos, fotografías y mapas elaborados para esta web pertenecen a su autor. Los mapas de fondo proceden de OpenStreetMap y SRTM (estilo OpenTopoMap, licencia CC-BY-SA) y, en la vista de satélite, de Esri, Maxar y Earthstar Geographics. Se permite compartir el enlace a la web; para reproducir contenidos, solicita permiso por correo.
 
 ## Privacidad y cookies
 
 Esta web **no utiliza cookies, no tiene formularios ni registra datos personales**, y no incluye analítica ni publicidad. Si escribes al correo de contacto, tus datos se usarán únicamente para responderte.
 
-Para mostrar los mapas, el navegador del visitante solicita imágenes de mapa a servidores de terceros (Esri y Amazon Web Services), que pueden registrar la dirección IP de la conexión conforme a sus propias políticas.
+Para mostrar los mapas, el navegador del visitante solicita imágenes de mapa a servidores de terceros (OpenTopoMap y Esri), que pueden registrar la dirección IP de la conexión conforme a sus propias políticas.
 
 ## Enlaces externos
 

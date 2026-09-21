@@ -192,9 +192,6 @@ h1 em{color:var(--wine);font-style:italic;font-weight:500}
 .viewer-tools{display:flex;gap:6px;flex-wrap:wrap}
 .viewer .pill{background:transparent;color:#fff;border-color:rgba(255,255,255,.3);padding:5px 12px;font-size:.85rem}
 .viewer .pill.on{background:var(--green);border-color:var(--green);color:var(--on-green)}
-#viewer-map{flex:1;min-height:0}
-.viewer-msg{position:absolute;inset:50% 0 auto;text-align:center;color:#fff;margin:0}
-.v-pin{width:18px;height:18px;border-radius:50%;border:3px solid #fff;box-shadow:0 1px 6px rgba(0,0,0,.6)}
 .btn-disabled{background:transparent;color:var(--muted);border:2px dashed var(--line);cursor:not-allowed;pointer-events:none;opacity:.85}
 .track-facts{list-style:none;margin:14px 0 8px;padding:0;display:grid;gap:4px;font-size:.9rem}
 .track-facts li{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:4px 0}

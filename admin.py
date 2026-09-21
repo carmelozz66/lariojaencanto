@@ -160,7 +160,7 @@ def vista_form(slug=None):
 <script>
 var la=document.getElementById('lat'),lo=document.getElementById('lng');
 var map=L.map('pick').setView([parseFloat(la.value)||42.28,parseFloat(lo.value)||-2.5],10);
-L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{{z}}/{{y}}/{{x}}',{{maxZoom:17,attribution:'Tiles © Esri'}}).addTo(map);
+L.tileLayer('https://{{s}}.tile.opentopomap.org/{{z}}/{{x}}/{{y}}.png',{{subdomains:'abc',maxZoom:17,attribution:'© OpenStreetMap, SRTM · © OpenTopoMap (CC-BY-SA)'}}).addTo(map);
 var mk=L.marker([parseFloat(la.value)||42.28,parseFloat(lo.value)||-2.5],{{draggable:true}}).addTo(map);
 function set(ll){{mk.setLatLng(ll);la.value=ll.lat.toFixed(4);lo.value=ll.lng.toFixed(4)}}
 map.on('click',function(e){{set(e.latlng)}});mk.on('dragend',function(){{set(mk.getLatLng())}});

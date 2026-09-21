@@ -32,7 +32,7 @@ Cada ruta muestra un botón «Descargar track». Se activa solo si existe `track
 Basta con copiar el archivo a `tracks/` y ejecutar `GENERAR.bat` (o subirlo desde la ficha de la ruta en el editor, que le pone el nombre correcto). Sin archivo, el botón aparece inactivo.
 Si hay track, la ficha muestra además el recorrido sobre el mapa, la distancia y el desnivel medidos, el perfil de altitud y enlaces a Google Maps; y el punto de salida del track sustituye a la coordenada aproximada de la ruta.
 
-Con track hay dos botones: **Descargar track (GPX)** y **Visualizar track en 3D** (visor con satélite/topográfico, relieve y giro). También se ofrece un KML para Google Earth. `GENERAR.bat` crea junto a cada GPX un `.gpx.js` que permite la descarga incluso abriendo la web como archivo local; al publicar hay que subir toda la carpeta `dist/`.
+Con track hay un botón **Descargar track (GPX)** y un enlace a KML para Google Earth. `GENERAR.bat` crea junto a cada GPX un `.gpx.js` que permite la descarga incluso abriendo la web como archivo local; al publicar hay que subir toda la carpeta `dist/`.
 
 > `tracks/paraisourbion.gpx` es actualmente un archivo de prueba (no está en Urbión): sustitúyelo por el real.
 

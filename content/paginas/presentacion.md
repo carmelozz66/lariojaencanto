@@ -13,9 +13,9 @@ De todas formas, en todos los paseos se indica su longitud y dificultad, de form
 
 Cada ruta tiene su track en GPX para llevarlo al GPS o al móvil, y en KML para Google Earth.
 
-## Míralo antes en 3D
+## Mira el mapa antes de salir
 
-En cada ficha puedes visualizar el recorrido en 3D, con el relieve del terreno, para conocer las subidas y bajadas antes de salir.
+En cada ficha hay un mapa topográfico con el recorrido sobre el terreno, ampliable a pantalla completa y con vista de satélite, y un perfil de altitud para conocer las subidas y bajadas antes de salir.
 
 ## Y más lugares
 

@@ -10,31 +10,18 @@
     toggle.setAttribute('aria-expanded', open);
   });
 
-  /* Mapa base */
-  function baseMap(el, opts, rich) {
+  /* Mapa base: OpenTopoMap (por defecto) y satélite, igual en todos los mapas de la web */
+  function baseMap(el, opts) {
     var map = L.map(el, opts);
-    var esri = function (svc, txt) {
-      return L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/' + svc + '/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 17, attribution: 'Tiles &copy; Esri &mdash; ' + txt
-      });
-    };
-    var topo = esri('World_Topo_Map', 'Esri, HERE, Garmin, USGS, OpenStreetMap contributors');
-    var calle = esri('World_Street_Map', 'Esri, HERE, Garmin, OpenStreetMap contributors');
-    var sat = esri('World_Imagery', 'Esri, Maxar, Earthstar Geographics');
-    if (rich) {
-      var otm = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-        subdomains: 'abc', maxZoom: 17,
-        attribution: 'Datos &copy; OpenStreetMap, SRTM &middot; Estilo &copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (CC-BY-SA)'
-      }).addTo(map);
-      var ign = L.tileLayer('https://www.ign.es/wmts/mapa-raster?service=WMTS&request=GetTile&version=1.0.0&layer=MTN&style=default&tilematrixset=GoogleMapsCompatible&tilematrix={z}&tilerow={y}&tilecol={x}&format=image/jpeg', {
-        maxZoom: 18, attribution: '&copy; <a href="https://www.ign.es" target="_blank" rel="noopener">Instituto Geográfico Nacional</a>'
-      });
-      L.control.layers({ 'OpenTopoMap': otm, 'IGN topográfico': ign, 'Esri topográfico': topo, 'Satélite': sat }, null, { collapsed: true }).addTo(map);
-      L.control.scale({ imperial: false }).addTo(map);
-      return map;
-    }
-    topo.addTo(map);
-    L.control.layers({ 'Topográfico': topo, 'Callejero': calle, 'Satélite': sat }, null, { collapsed: true }).addTo(map);
+    var otm = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      subdomains: 'abc', maxZoom: 17,
+      attribution: 'Datos &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>, SRTM &middot; Estilo &copy; <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (CC-BY-SA)'
+    }).addTo(map);
+    var sat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      maxZoom: 17, attribution: 'Tiles &copy; Esri &mdash; Esri, Maxar, Earthstar Geographics'
+    });
+    L.control.layers({ 'Topográfico (OpenTopoMap)': otm, 'Satélite': sat }, null, { collapsed: true }).addTo(map);
+    L.control.scale({ imperial: false }).addTo(map);
     return map;
   }
   function drawTrack(map, pts) {
@@ -54,7 +41,7 @@
   /* Mapa de inicio */
   var big = $('#map');
   if (big && window.RUTAS) {
-    var map = baseMap(big, { scrollWheelZoom: false }, true);
+    var map = baseMap(big, { scrollWheelZoom: false });
     var pts = [];
     window.RUTAS.forEach(function (r) {
       if (r.lat == null) return;
@@ -75,7 +62,7 @@
   /* Mapa general a pantalla completa (página propia) */
   var gen = $('#mapfull-map');
   if (gen && gen.dataset.general && window.RUTAS_MAPA) {
-    var gm = baseMap(gen, { scrollWheelZoom: true }, true);
+    var gm = baseMap(gen, { scrollWheelZoom: true });
     var all = [];
     window.RUTAS_MAPA.forEach(function (r) {
       var pop = '<b>' + r.titulo + '</b><br>' + r.km + ' km · ' + r.dificultad + '<br><a href="rutas/' + r.slug + '.html">Ver ruta →</a>';
@@ -105,7 +92,7 @@
     var fpts = [];
     try { fpts = JSON.parse($('#track-data').textContent); } catch (e) {}
     if (fpts.length > 1) {
-      var fm = baseMap(fullPage, { scrollWheelZoom: true }, true);
+      var fm = baseMap(fullPage, { scrollWheelZoom: true });
       var fl = drawTrack(fm, fpts);
       fm.fitBounds(fl.getBounds(), { padding: [40, 40] });
     }
@@ -124,7 +111,7 @@
     if (tpts.length > 1) {
       // en ficha "móvil nuevo" el mapa pequeño es una vista previa: un dedo sobre él no bloquea el desplazamiento de la página
       var vista = !!mini.closest('.m2') && L.Browser.mobile;
-      var mm = baseMap(mini, { scrollWheelZoom: false, dragging: !vista, touchZoom: !vista, doubleClickZoom: !vista }, true);
+      var mm = baseMap(mini, { scrollWheelZoom: false, dragging: !vista, touchZoom: !vista, doubleClickZoom: !vista });
       var ln = drawTrack(mm, tpts);
       mm.fitBounds(ln.getBounds(), { padding: [20, 20] });
       var openFull = function () { window.open(mini.dataset.url, '_blank'); };
@@ -249,83 +236,4 @@
       else saveText(txt, file, 'application/gpx+xml');
     }, function () { window.location.href = a.href; });
   });
-
-  /* ---------- Visor 3D del track ---------- */
-  var vbtn = $('#open-viewer');
-  if (vbtn) {
-    var viewer = $('#viewer'), vmsg = $('#viewer-msg'), vmap = null, orbiting = false, relieve = true;
-    var esri = function (svc) { return ['https://server.arcgisonline.com/ArcGIS/rest/services/' + svc + '/MapServer/tile/{z}/{y}/{x}']; };
-
-    function msg(t) { vmsg.textContent = t; vmsg.hidden = false; }
-    function ensureLib(cb) {
-      if (window.maplibregl) return cb();
-      var css = document.createElement('link'); css.rel = 'stylesheet'; css.href = ASSETS + 'vendor/maplibre-gl.css'; document.head.appendChild(css);
-      var s = document.createElement('script'); s.src = ASSETS + 'vendor/maplibre-gl.js';
-      s.onload = cb; s.onerror = function () { msg('No se ha podido cargar el visor.'); };
-      document.head.appendChild(s);
-    }
-    function initViewer() {
-      if (vmap) { vmap.resize(); return; }
-      var raw; try { raw = JSON.parse($('#track-data').textContent); } catch (err) { return msg('Track no disponible.'); }
-      var coords = raw.map(function (p) { return [p[1], p[0]]; });
-      var b = coords.reduce(function (bb, c) { return bb.extend(c); }, new maplibregl.LngLatBounds(coords[0], coords[0]));
-      try {
-        vmap = new maplibregl.Map({
-          container: 'viewer-map', bounds: b, fitBoundsOptions: { padding: 70 }, pitch: 60, bearing: -20, maxPitch: 85,
-          style: { version: 8, sources: {
-            sat: { type: 'raster', tiles: esri('World_Imagery'), tileSize: 256, maxzoom: 17, attribution: 'Tiles © Esri — Esri, Maxar, Earthstar Geographics' },
-            topo: { type: 'raster', tiles: esri('World_Topo_Map'), tileSize: 256, maxzoom: 17, attribution: 'Tiles © Esri — Esri, HERE, Garmin, USGS, OpenStreetMap contributors' },
-            dem: { type: 'raster-dem', tiles: ['https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png'], encoding: 'terrarium', tileSize: 256, maxzoom: 14, attribution: 'Relieve: Mapzen / AWS Terrain Tiles' }
-          }, layers: [
-            { id: 'sat', type: 'raster', source: 'sat' },
-            { id: 'topo', type: 'raster', source: 'topo', layout: { visibility: 'none' } }
-          ] }
-        });
-      } catch (err) { return msg('Tu navegador no admite el visor 3D (WebGL). Puedes descargar el track.'); }
-      vmap.addControl(new maplibregl.NavigationControl({ visualizePitch: true }), 'top-right');
-      vmap.addControl(new maplibregl.ScaleControl({ unit: 'metric' }), 'bottom-left');
-      vmap.on('load', function () {
-        vmap.setTerrain({ source: 'dem', exaggeration: 1.3 });
-        vmap.resize();
-        vmap.fitBounds(b, { padding: { top: 90, bottom: 60, left: 60, right: 60 }, pitch: 60, bearing: -20, maxZoom: 16, duration: 0 });
-        vmap.addSource('track', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'LineString', coordinates: coords } } });
-        vmap.addLayer({ id: 'track-casing', type: 'line', source: 'track', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#ffffff', 'line-width': 8, 'line-opacity': .9 } });
-        vmap.addLayer({ id: 'track-line', type: 'line', source: 'track', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#d6304f', 'line-width': 4.5 } });
-        [['#2f9e44', coords[0]], ['#1f1f1f', coords[coords.length - 1]]].forEach(function (m) {
-          var el = document.createElement('div'); el.className = 'v-pin'; el.style.background = m[0];
-          new maplibregl.Marker({ element: el }).setLngLat(m[1]).addTo(vmap);
-        });
-      });
-      ['mousedown', 'touchstart', 'wheel'].forEach(function (ev) { vmap.on(ev, stopOrbit); });
-    }
-    function orbit() {
-      if (!orbiting || !vmap) return;
-      vmap.setBearing(vmap.getBearing() + 0.2);
-      requestAnimationFrame(orbit);
-    }
-    function stopOrbit() { orbiting = false; $('#v-orbit').classList.remove('on'); }
-    function openViewer() {
-      viewer.hidden = false; document.body.style.overflow = 'hidden';
-      ensureLib(initViewer);
-    }
-    function closeViewer() { stopOrbit(); viewer.hidden = true; document.body.style.overflow = ''; }
-
-    $$('#open-viewer,.open-viewer-m').forEach(function (b) { b.addEventListener('click', openViewer); });
-    viewer.addEventListener('click', function (e) {
-      var b = e.target.closest('button'); if (!b || !vmap) { if (b && b.classList.contains('v-close')) closeViewer(); return; }
-      if (b.classList.contains('v-close')) return closeViewer();
-      if (b.dataset.capa) {
-        vmap.setLayoutProperty('sat', 'visibility', b.dataset.capa === 'sat' ? 'visible' : 'none');
-        vmap.setLayoutProperty('topo', 'visibility', b.dataset.capa === 'topo' ? 'visible' : 'none');
-        $$('[data-capa]', viewer).forEach(function (x) { x.classList.toggle('on', x === b); });
-      } else if (b.id === 'v-3d') {
-        relieve = !relieve; b.classList.toggle('on', relieve);
-        vmap.setTerrain(relieve ? { source: 'dem', exaggeration: 1.3 } : null);
-        vmap.easeTo({ pitch: relieve ? 60 : 0, duration: 700 });
-      } else if (b.id === 'v-orbit') {
-        orbiting = !orbiting; b.classList.toggle('on', orbiting); if (orbiting) orbit();
-      }
-    });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !viewer.hidden) closeViewer(); });
-  }
 })();
