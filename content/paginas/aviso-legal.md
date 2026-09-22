@@ -17,7 +17,9 @@ Los textos, fotografías y mapas elaborados para esta web pertenecen a su autor.
 
 ## Privacidad y cookies
 
-Esta web **no utiliza cookies, no tiene formularios ni registra datos personales**, y no incluye analítica ni publicidad. Si escribes al correo de contacto, tus datos se usarán únicamente para responderte.
+Esta web **no utiliza cookies, no tiene formularios ni registra datos personales**, y no incluye publicidad. Si escribes al correo de contacto, tus datos se usarán únicamente para responderte.
+
+Para conocer el número de visitas, la web usa GoatCounter, un servicio de analítica que no utiliza cookies ni registra datos que identifiquen a cada persona.
 
 Para mostrar los mapas, el navegador del visitante solicita imágenes de mapa a servidores de terceros (OpenTopoMap y Esri), que pueden registrar la dirección IP de la conexión conforme a sus propias políticas.
 
