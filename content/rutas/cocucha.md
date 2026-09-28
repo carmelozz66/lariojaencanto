@@ -11,7 +11,7 @@ dificultad: "media"
 epoca: "primavera y otoño"
 resumen: "Este “Lugar con encanto” nos permite disfrutar de uno de los muchos hermosos paseos que el entorno de Torrecilla en Cameros puede ofrecernos.\n\nAdemás, el Paso Cocucha nos dará acceso a un precioso valle escondido en el que encontramos una espectacular dolina, tupidos bosquetes de boj y algunos antiguos corrales abandonados.\n\nPara completar el menú; bosques de quejigos, praderas sin fin, y espectaculares vistas, tanto hacia el norte, con Nestares, el Serradero y el Castillo de Viguera y también hacia el sur, Sierra de Cebollera y Cabezo del Santo."
 foto_1_pie: "Sendero entre quejigos"
-foto_2_pie: "Vistas de Nestares"
+foto_2_pie: "Vistas de Nestares y Castillo de Viguera"
 lat: 42.25642
 lng: -2.632782
 orden: 9
