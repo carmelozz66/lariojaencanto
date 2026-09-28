@@ -268,7 +268,8 @@ def build():
     (DIST / "assets" / "rutas.json").write_text(json.dumps(datos, ensure_ascii=False), encoding="utf-8")
 
     destacadas = [r for r in rutas if r["slug"] in ("rajao", "hiedra", "paraiso", "prudencio", "acebal", "penalba")] or rutas[:6]
-    render("home.html", "index.html", destacadas=destacadas, activo="inicio", datos=datos)
+    novedad = next((r for r in rutas if r["slug"] == site.get("novedad")), None)
+    render("home.html", "index.html", destacadas=destacadas, novedad=novedad, activo="inicio", datos=datos)
     render("rutas.html", "rutas.html", activo="rutas", datos=datos)
     for i, r in enumerate(rutas):
         render("ruta.html", f"rutas/{r['slug']}.html", base="../", r=r, activo="rutas",

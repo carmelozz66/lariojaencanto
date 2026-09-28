@@ -77,6 +77,19 @@ h1 em{color:var(--wine);font-style:italic;font-weight:500}
 .section-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:1.2rem}
 .section-head h2{margin:0}.more{font-weight:600;text-decoration:none}
 .band{background:var(--green-soft)}
+/* Novedad (inicio): tarjeta ancha destacada */
+.novedad-sec{padding-bottom:0}
+.novedad{display:grid;grid-template-columns:1.25fr 1fr;background:var(--surface);border:2px solid var(--wine);border-radius:calc(var(--r) + 4px);overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.novedad:hover{transform:translateY(-4px);color:var(--ink);box-shadow:0 2px 4px rgba(0,0,0,.08),0 16px 32px rgba(35,41,31,.16)}
+.novedad-img{overflow:hidden;min-height:340px;background:var(--green-soft)}
+.novedad-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.novedad:hover .novedad-img img{transform:scale(1.04)}
+.novedad-body{padding:clamp(20px,3vw,36px);display:flex;flex-direction:column;justify-content:center;background:linear-gradient(160deg,color-mix(in srgb,var(--wine) 7%,var(--surface)),var(--surface))}
+.novedad-tag{align-self:flex-start;margin:0 0 .8rem;padding:5px 14px;border-radius:999px;background:var(--wine);color:var(--surface);font:700 .8rem var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.novedad-body h2{margin:0 0 4px;font-size:clamp(1.8rem,3.2vw,2.5rem)}
+.novedad-txt{margin:14px 0 20px;color:var(--muted)}
+.novedad .btn{align-self:flex-start}
+@media (max-width:820px){.novedad{grid-template-columns:1fr}.novedad-img{min-height:0;aspect-ratio:16/9}}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
 .card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
 .card:hover{transform:translateY(-4px);color:var(--ink);box-shadow:0 2px 4px rgba(0,0,0,.08),0 16px 32px rgba(35,41,31,.16)}

@@ -9,3 +9,7 @@ url: "https://lariojaencanto.es"
 # false = la web pide a Google y otros buscadores que NO la indexen (mientras la revisas).
 # Cuando esté lista para el público, cámbialo a true.
 indexar: true
+
+# Ruta que aparece en el bloque «Novedad» de la página de inicio (nombre del archivo .md sin extensión).
+# Déjalo vacío ("") para ocultar el bloque.
+novedad: "cocucha"

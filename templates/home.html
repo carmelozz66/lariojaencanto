@@ -24,6 +24,30 @@
   </div>
 </section>
 
+{% if novedad %}{% set r = novedad %}{% set f = r.fotos[-1] if r.fotos else None %}
+<section class="section wrap novedad-sec">
+  <a class="novedad" href="rutas/{{ r.slug }}.html">
+    {% if f %}<div class="novedad-img"><img src="img/{{ r.slug }}/foto-{{ f.n }}.jpg" alt="{{ f.pie }}" loading="lazy"></div>{% endif %}
+    <div class="novedad-body">
+      <p class="novedad-tag">★ Novedad</p>
+      <h2>{{ r.titulo }}</h2>
+      <p class="card-loc">{{ r.localidad }} · comarca del {{ r.zona }}</p>
+      <ul class="meta">
+        <li title="Distancia">{{ r.km_txt }}</li>
+        <li title="Desnivel">↑ {{ r.desnivel }} m</li>
+        <li title="Tiempo orientativo">{{ r.tiempo }}</li>
+        <li class="dif dif-{{ r.nivel }}" title="Dificultad: {{ r.dificultad }}">
+          <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>{{ r.dificultad }}
+        </li>
+      </ul>
+      <p class="novedad-txt">{{ r.resumen.split('
+')[0] }}</p>
+      <span class="btn">Ver el paseo →</span>
+    </div>
+  </a>
+</section>
+{% endif %}
+
 <section class="section wrap">
   <div class="section-head">
     <h2>Para empezar</h2>
